@@ -1,0 +1,98 @@
+.live-workout {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 720px;
+  margin-inline: auto;
+  padding: 16px 12px 96px;
+}
+
+.live-workout__load-error {
+  padding: 24px 16px;
+}
+
+.live-workout__header {
+  position: sticky;
+  inset-block-start: var(--header-height);
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-inline: -12px;
+  padding: 10px 12px;
+  background: var(--color-bg);
+  border-block-end: 1px solid var(--color-border);
+}
+
+.live-workout__heading {
+  min-width: 0;
+}
+
+.live-workout__title {
+  margin: 0;
+  font-size: 1.3rem;
+  overflow-wrap: anywhere;
+}
+
+.live-workout__plan {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.live-workout__status {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  flex-shrink: 0;
+}
+
+.live-workout__clock {
+  font-size: 1.3rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  direction: ltr;
+}
+
+.live-workout__save {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.live-workout__save--error {
+  color: var(--color-danger);
+}
+
+.live-workout__empty {
+  margin: 16px 0;
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+.live-workout__exercises {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.live-workout__add {
+  border-style: dashed;
+}
+
+.live-workout__actions {
+  display: flex;
+  gap: 10px;
+}
+
+.live-workout__actions .button {
+  flex: 1;
+  min-height: 48px;
+}
+
+.live-workout__actions .button--primary {
+  flex: 2;
+}

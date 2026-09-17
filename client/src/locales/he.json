@@ -55,7 +55,26 @@
   },
   "home": {
     "greeting": "היי, {{username}}",
-    "subtitle": "תוכניות האימון, האימונים והתזונה שלכם יופיעו כאן."
+    "today": "היום",
+    "noActivePlan": "אין לכם תוכנית אימון פעילה.",
+    "goToPlans": "ליצירה או בחירה של תוכנית",
+    "nothingToday": "אין אימון מתוכנן להיום.",
+    "start": "התחלה",
+    "startNamed": "התחלת {{name}}",
+    "otherWorkouts": "אימונים נוספים בתוכנית",
+    "startFree": "התחלת אימון חופשי",
+    "inProgress": "אימון בתהליך",
+    "continue": "המשך",
+    "exerciseCount_one": "תרגיל אחד",
+    "exerciseCount_two": "שני תרגילים",
+    "exerciseCount_other": "{{count}} תרגילים",
+    "thisWeek": "השבוע",
+    "weekProgress_one": "{{done}} מתוך אימון אחד בוצעו",
+    "weekProgress_two": "{{done}} מתוך {{count}} אימונים בוצעו",
+    "weekProgress_other": "{{done}} מתוך {{count}} אימונים בוצעו",
+    "recent": "אימונים אחרונים",
+    "noRecent": "עדיין אין אימונים. התחילו אחד למעלה!",
+    "allHistory": "← כל האימונים"
   },
   "errors": {
     "NOT_FOUND": "לא נמצא",
@@ -79,7 +98,11 @@
     "EXERCISE_NOT_FOUND": "התרגיל לא קיים או שאי אפשר לערוך אותו.",
     "EXERCISE_NAME_TAKEN": "כבר יש לכם תרגיל בשם הזה.",
     "PLAN_NOT_FOUND": "התוכנית הזו לא קיימת.",
-    "PLAN_HAS_ERRORS": "יש שדות שצריך לתקן לפני השמירה."
+    "PLAN_HAS_ERRORS": "יש שדות שצריך לתקן לפני השמירה.",
+    "SESSION_NOT_FOUND": "האימון הזה לא קיים.",
+    "SESSION_IN_PROGRESS": "כבר יש לכם אימון בתהליך.",
+    "SESSION_ALREADY_FINISHED": "האימון הזה כבר הסתיים.",
+    "WORKOUT_NOT_FOUND": "האימון הזה כבר לא נמצא בתוכנית."
   },
   "tagInput": {
     "add": "הוספה",
@@ -230,7 +253,8 @@
     "label": "ניווט ראשי",
     "home": "בית",
     "exercises": "תרגילים",
-    "plans": "תוכניות"
+    "plans": "תוכניות",
+    "history": "היסטוריה"
   },
   "exercises": {
     "title": "תרגילים",
@@ -379,6 +403,70 @@
       "save": "שמירת התוכנית",
       "unsavedConfirm": "יש שינויים שלא נשמרו. לצאת בלי לשמור?",
       "workoutLetters": "אבגדהוזחטיכלמנ"
-    }
+    },
+    "done": "בוצע",
+    "unplanned": "לא מתוכנן"
+  },
+  "workout": {
+    "freeWorkout": "אימון חופשי",
+    "plan": "תוכנית",
+    "lastTime": "בפעם הקודמת",
+    "addedDuringWorkout": "נוסף במהלך האימון",
+    "fields": {
+      "reps": "חזרות",
+      "weightKg": "משקל",
+      "durationSeconds": "זמן",
+      "durationMinutes": "משך",
+      "distanceKm": "מרחק"
+    },
+    "setField": "סט {{number}} {{field}}",
+    "completeSet": "סט {{number}} בוצע",
+    "removeSet": "הסרת סט {{number}}",
+    "setsDone": "{{done}} מתוך {{total}} סטים בוצעו",
+    "addSet": "הוספת סט",
+    "removeExercise": "הסרת {{name}}",
+    "addExercise": "הוספת תרגיל",
+    "noExercises": "עדיין אין תרגילים. הוסיפו את הראשון.",
+    "notes": "הערות לאימון",
+    "notesPlaceholder": "איך הרגשתם?",
+    "elapsed": "זמן שעבר",
+    "saved": "נשמר",
+    "saving": "שומר…",
+    "saveFailed": "אין חיבור – ננסה שוב",
+    "rest": "מנוחה",
+    "restOver": "המנוחה נגמרה – לסט הבא!",
+    "skipRest": "דילוג",
+    "finish": "סיום האימון",
+    "discard": "ביטול האימון",
+    "confirmFinish": "לסיים את האימון?",
+    "confirmFinishUnfinished_one": "סט אחד לא סומן כבוצע. לסיים בכל זאת?",
+    "confirmFinishUnfinished_two": "שני סטים לא סומנו כבוצעו. לסיים בכל זאת?",
+    "confirmFinishUnfinished_other": "{{count}} סטים לא סומנו כבוצעו. לסיים בכל זאת?",
+    "confirmDiscard": "לבטל את האימון? כל מה שנרשם בו יימחק."
+  },
+  "history": {
+    "title": "היסטוריית אימונים",
+    "empty": "עדיין אין אימונים שהסתיימו.",
+    "loadMore": "טעינת עוד",
+    "back": "→ היסטוריית אימונים",
+    "setsOfPlanned": "{{done}}/{{count}} סטים מתוכננים",
+    "sets_one": "סט אחד",
+    "sets_two": "שני סטים",
+    "sets_other": "{{count}} סטים",
+    "volume": "{{value}} ק״ג הורמו",
+    "duration": "משך",
+    "setsLabel": "סטים",
+    "volumeLabel": "נפח",
+    "plannedVsActual": "תכנון מול ביצוע",
+    "planned": "תכנון",
+    "actual": "ביצוע",
+    "status": {
+      "done": "בוצע",
+      "partial": "חלקי",
+      "skipped": "דולג",
+      "extra": "נוסף"
+    },
+    "delete": "מחיקת האימון",
+    "confirmDelete": "למחוק את האימון מההיסטוריה?"
   }
 }

@@ -10,6 +10,7 @@
   --color-on-primary: #ffffff;
   --color-success: #16a34a;
   --color-danger: #dc2626;
+  --color-warning: #b45309;
   --shadow-card: 0 1px 3px rgb(0 0 0 / 8%);
 
   color-scheme: light;
@@ -26,6 +27,7 @@
   --color-on-primary: #06220f;
   --color-success: #22c55e;
   --color-danger: #f87171;
+  --color-warning: #fbbf24;
   --shadow-card: 0 1px 3px rgb(0 0 0 / 40%);
 
   color-scheme: dark;

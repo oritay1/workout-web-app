@@ -1,0 +1,50 @@
+.rest-timer {
+  position: fixed;
+  inset-inline: 8px;
+  inset-block-end: calc(var(--bottom-nav-height) + env(safe-area-inset-bottom) + 8px);
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 560px;
+  margin-inline: auto;
+  padding: 10px 12px;
+  border-radius: var(--radius);
+  background: var(--color-text);
+  color: var(--color-bg);
+  box-shadow: 0 8px 24px rgb(0 0 0 / 25%);
+}
+
+.rest-timer--finished {
+  background: var(--color-success);
+  color: var(--color-on-primary);
+}
+
+.rest-timer__label {
+  font-weight: 500;
+}
+
+.rest-timer__time {
+  font-size: 1.4rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  direction: ltr;
+}
+
+.rest-timer__actions {
+  display: flex;
+  gap: 6px;
+  margin-inline-start: auto;
+}
+
+.rest-timer .button {
+  min-height: 36px;
+  padding: 0 12px;
+  border-color: currentColor;
+  color: inherit;
+  font-size: 0.9rem;
+}
+
+.rest-timer .button:hover:not(:disabled) {
+  background: rgb(255 255 255 / 12%);
+}

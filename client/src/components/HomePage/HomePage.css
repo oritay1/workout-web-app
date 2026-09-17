@@ -1,16 +1,126 @@
 .home-page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   max-width: 720px;
   margin-inline: auto;
-  padding: 32px 16px;
+  padding: 24px 16px 32px;
 }
 
 .home-page__title {
-  margin: 0 0 8px;
-  font-size: 1.75rem;
+  margin: 0;
+  font-size: 1.6rem;
   overflow-wrap: anywhere;
 }
 
-.home-page__subtitle {
-  margin: 0;
+.home-page__muted {
+  margin: 0 0 12px;
   color: var(--color-text-muted);
+}
+
+.home-page__muted a,
+.home-page__all {
+  color: var(--color-primary);
+}
+
+.home-page__current {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: var(--radius);
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.home-page__current-label,
+.home-page__current-name {
+  margin: 0;
+}
+
+.home-page__current-label {
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
+.home-page__current-name {
+  font-weight: 700;
+}
+
+.home-page__current .button--primary {
+  background: var(--color-on-primary);
+  color: var(--color-primary);
+}
+
+.home-page__workouts,
+.home-page__recent {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0 0 12px;
+  padding: 0;
+  list-style: none;
+}
+
+.home-page__workout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.home-page__workout-name {
+  display: block;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
+.home-page__workout-meta {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.home-page__other {
+  margin-bottom: 12px;
+}
+
+.home-page__other summary {
+  margin-bottom: 8px;
+  color: var(--color-primary);
+  cursor: pointer;
+}
+
+.home-page__free {
+  width: 100%;
+}
+
+.home-page__progress {
+  height: 8px;
+  margin-bottom: 12px;
+  overflow: hidden;
+  border-radius: 4px;
+  background: var(--color-bg);
+}
+
+.home-page__progress span {
+  display: block;
+  height: 100%;
+  border-radius: 4px;
+  background: var(--color-success);
+}
+
+.home-page__recent-link {
+  display: block;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: var(--color-bg);
+  color: inherit;
+  text-decoration: none;
+}
+
+.home-page__all {
+  display: inline-block;
+  padding-block: 4px;
 }

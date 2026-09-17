@@ -1,0 +1,120 @@
+.session-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 720px;
+  margin-inline: auto;
+  padding: 16px 16px 32px;
+}
+
+.session-detail__back {
+  align-self: flex-start;
+  padding-block: 8px;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.session-detail__title {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.session-detail__subtitle {
+  margin: 2px 0 0;
+  color: var(--color-text-muted);
+}
+
+.session-detail__stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0;
+}
+
+.session-detail__stats div {
+  padding: 10px;
+  border-radius: 10px;
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+  text-align: center;
+}
+
+.session-detail__stats dt {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.session-detail__stats dd {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+.session-detail__exercises {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.session-detail__exercise {
+  padding-block: 10px;
+}
+
+.session-detail__exercise + .session-detail__exercise {
+  border-block-start: 1px solid var(--color-border);
+}
+
+.session-detail__exercise-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.session-detail__exercise-name {
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
+.session-detail__status--partial {
+  background: color-mix(in srgb, var(--color-warning) 18%, transparent);
+  color: var(--color-warning);
+}
+
+.session-detail__status--skipped {
+  background: color-mix(in srgb, var(--color-danger) 15%, transparent);
+  color: var(--color-danger);
+}
+
+.session-detail__status--extra {
+  background: color-mix(in srgb, var(--color-text-muted) 15%, transparent);
+  color: var(--color-text-muted);
+}
+
+.session-detail__line {
+  display: flex;
+  gap: 8px;
+  margin: 2px 0 0;
+  font-size: 0.9rem;
+}
+
+.session-detail__line-label {
+  flex-shrink: 0;
+  width: 64px;
+  color: var(--color-text-muted);
+}
+
+.session-detail__line-value {
+  unicode-bidi: isolate;
+  overflow-wrap: anywhere;
+}
+
+.session-detail__notes {
+  margin: 0;
+  white-space: pre-wrap;
+}

@@ -26,6 +26,7 @@
 - A workout session can be started from a planned workout (or as a free session) and tracked in real time: add/remove exercises during the session, log each set (reps, weight / distance, time), mark sets done, rest timer.
 - The session stores what was actually done and stays linked to what was planned, so plan adherence can be shown (per session, per week, per exercise over time).
 - A session in progress must survive a page refresh (persist to the server as it goes, not only at the end).
+- Implementation: `WorkoutSession` (`status` inProgress/completed, at most one in progress per user). Starting from a plan copies each exercise's targets into `exercises[].planned` and pre-fills set rows, so history never changes when the plan is edited or deleted. The live screen autosaves the whole session with `PUT /api/sessions/:id` (debounced, retried while offline, flushed with `keepalive` when leaving). Planned exercises can't be removed from a session — unfinished sets mean "skipped"; exercises added during the workout have `planned: null` ("extra"). Planned vs actual: per exercise (done / partial / skipped / extra), per session (completed vs planned sets) and per week (finished sessions vs `workoutsPerWeek`, check marks on the week schedule). `GET /api/exercises/:id/history` feeds the "last time" hint.
 
 **C. Diet plans and daily tracking**
 - A user can have several diet plans; exactly one is **active** and is the one tracked.

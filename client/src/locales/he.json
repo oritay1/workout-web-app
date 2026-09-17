@@ -1,0 +1,25 @@
+{
+  "app": {
+    "name": "אפליקציית אימונים"
+  },
+  "header": {
+    "language": "שפה",
+    "switchToDark": "מעבר למצב לילה",
+    "switchToLight": "מעבר למצב יום"
+  },
+  "home": {
+    "title": "מתאמנים. אוכלים. עוקבים.",
+    "subtitle": "תוכניות אימון, מעקב אימונים בזמן אמת ותוכניות דיאטה - הכול במקום אחד.",
+    "serverStatus": "מצב השרת",
+    "statusChecking": "בודק…",
+    "statusOk": "מחובר",
+    "statusError": "לא זמין"
+  },
+  "errors": {
+    "NOT_FOUND": "לא נמצא",
+    "INVALID_JSON": "בקשה לא תקינה",
+    "PAYLOAD_TOO_LARGE": "הבקשה גדולה מדי",
+    "SERVER_ERROR": "משהו השתבש. נסו שוב.",
+    "NETWORK_ERROR": "אין חיבור לשרת. בדקו את החיבור."
+  }
+}

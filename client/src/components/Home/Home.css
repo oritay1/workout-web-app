@@ -1,0 +1,35 @@
+.home {
+  max-width: 720px;
+  margin-inline: auto;
+  padding: 32px 16px;
+}
+
+.home__title {
+  margin: 0 0 8px;
+  font-size: 1.75rem;
+}
+
+.home__subtitle {
+  margin: 0 0 24px;
+  color: var(--color-text-muted);
+}
+
+.home__status {
+  margin: 0;
+  padding: 12px 16px;
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+
+.home__status-value {
+  font-weight: 500;
+}
+
+.home__status-value--ok {
+  color: var(--color-success);
+}
+
+.home__status-value--error {
+  color: var(--color-danger);
+}

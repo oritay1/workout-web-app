@@ -14,5 +14,6 @@ router.get('/measurements', meController.listMeasurements);
 router.get('/measurements/latest', meController.latestMeasurements);
 router.post('/measurements', meController.addMeasurement);
 router.delete('/measurements/:id', meController.deleteMeasurement);
+router.get('/export.md', meController.exportMarkdown);
 
 export default router;

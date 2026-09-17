@@ -1,24 +1,27 @@
 // Single fetch wrapper. Errors carry the server's stable `code` for translation (t(`errors.${code}`))
 export async function request(path, options = {}) {
+  // responseType 'text' for non-JSON responses (e.g. the Markdown export)
+  const { responseType, ...fetchOptions } = options
   let res
   try {
     res = await fetch(`/api${path}`, {
       credentials: 'same-origin',
-      ...options,
+      ...fetchOptions,
       headers: {
         'Content-Type': 'application/json',
-        ...options.headers,
+        ...fetchOptions.headers,
       },
     })
   } catch {
     throw createError(0, 'NETWORK_ERROR')
   }
 
-  const data = res.status === 204 ? null : await res.json().catch(() => null)
   if (!res.ok) {
+    const data = await res.json().catch(() => null)
     throw createError(res.status, data?.code || 'SERVER_ERROR', data?.field)
   }
-  return data
+  if (res.status === 204) return null
+  return responseType === 'text' ? res.text() : res.json().catch(() => null)
 }
 
 function createError(status, code, field) {

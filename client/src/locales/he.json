@@ -2,24 +2,69 @@
   "app": {
     "name": "אפליקציית אימונים"
   },
+  "common": {
+    "loading": "טוען",
+    "optional": "(לא חובה)"
+  },
   "header": {
     "language": "שפה",
     "switchToDark": "מעבר למצב לילה",
     "switchToLight": "מעבר למצב יום"
   },
+  "userMenu": {
+    "open": "תפריט חשבון",
+    "logout": "התנתקות"
+  },
+  "auth": {
+    "loginTitle": "ברוכים השבים",
+    "loginSubtitle": "התחברו כדי להמשיך להתאמן.",
+    "identifier": "שם משתמש או מייל",
+    "password": "סיסמה",
+    "showPassword": "הצגה",
+    "hidePassword": "הסתרה",
+    "loginButton": "התחברות",
+    "loggingIn": "מתחבר…",
+    "noAccount": "אין לכם חשבון?",
+    "registerLink": "להרשמה",
+    "registerTitle": "יצירת חשבון",
+    "registerSubtitle": "אימונים, תזונה והתקדמות - הכול במקום אחד.",
+    "username": "שם משתמש",
+    "usernameHint": "3-30 תווים: אותיות באנגלית, ספרות, _ או .",
+    "email": "מייל",
+    "phone": "מספר טלפון",
+    "passwordHint": "לפחות 8 תווים",
+    "registerButton": "הרשמה",
+    "registering": "יוצר חשבון…",
+    "haveAccount": "כבר יש לכם חשבון?",
+    "loginLink": "להתחברות"
+  },
+  "avatar": {
+    "add": "הוספת תמונה",
+    "alt": "תמונת פרופיל",
+    "processing": "מעבד…",
+    "remove": "הסרת תמונה",
+    "readError": "לא הצלחנו לקרוא את התמונה. נסו תמונה אחרת."
+  },
   "home": {
-    "title": "מתאמנים. אוכלים. עוקבים.",
-    "subtitle": "תוכניות אימון, מעקב אימונים בזמן אמת ותוכניות דיאטה - הכול במקום אחד.",
-    "serverStatus": "מצב השרת",
-    "statusChecking": "בודק…",
-    "statusOk": "מחובר",
-    "statusError": "לא זמין"
+    "greeting": "היי, {{username}}",
+    "subtitle": "תוכניות האימון, האימונים והתזונה שלכם יופיעו כאן."
   },
   "errors": {
     "NOT_FOUND": "לא נמצא",
     "INVALID_JSON": "בקשה לא תקינה",
     "PAYLOAD_TOO_LARGE": "הבקשה גדולה מדי",
     "SERVER_ERROR": "משהו השתבש. נסו שוב.",
-    "NETWORK_ERROR": "אין חיבור לשרת. בדקו את החיבור."
+    "NETWORK_ERROR": "אין חיבור לשרת. בדקו את החיבור.",
+    "TOO_MANY_REQUESTS": "יותר מדי ניסיונות. נסו שוב בעוד כמה דקות.",
+    "UNAUTHORIZED": "יש להתחבר מחדש.",
+    "MISSING_CREDENTIALS": "הזינו שם משתמש או מייל וסיסמה.",
+    "INVALID_CREDENTIALS": "שם משתמש, מייל או סיסמה שגויים.",
+    "INVALID_USERNAME": "3-30 תווים: אותיות באנגלית, ספרות, _ או .",
+    "USERNAME_TAKEN": "שם המשתמש הזה כבר תפוס.",
+    "INVALID_EMAIL": "הזינו כתובת מייל תקינה.",
+    "EMAIL_TAKEN": "כבר קיים חשבון עם המייל הזה.",
+    "INVALID_PHONE": "הזינו מספר טלפון תקין.",
+    "INVALID_PASSWORD": "הסיסמה צריכה להכיל לפחות 8 תווים.",
+    "INVALID_AVATAR": "אי אפשר להשתמש בתמונה הזו. נסו תמונה אחרת."
   }
 }

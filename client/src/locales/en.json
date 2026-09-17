@@ -2,24 +2,69 @@
   "app": {
     "name": "Workout App"
   },
+  "common": {
+    "loading": "Loading",
+    "optional": "(optional)"
+  },
   "header": {
     "language": "Language",
     "switchToDark": "Switch to dark mode",
     "switchToLight": "Switch to light mode"
   },
+  "userMenu": {
+    "open": "Account menu",
+    "logout": "Log out"
+  },
+  "auth": {
+    "loginTitle": "Welcome back",
+    "loginSubtitle": "Log in to continue training.",
+    "identifier": "Username or email",
+    "password": "Password",
+    "showPassword": "Show",
+    "hidePassword": "Hide",
+    "loginButton": "Log in",
+    "loggingIn": "Logging in…",
+    "noAccount": "Don't have an account?",
+    "registerLink": "Sign up",
+    "registerTitle": "Create an account",
+    "registerSubtitle": "Workouts, diet and progress - all in one place.",
+    "username": "Username",
+    "usernameHint": "3-30 characters: English letters, digits, _ or .",
+    "email": "Email",
+    "phone": "Phone number",
+    "passwordHint": "At least 8 characters",
+    "registerButton": "Sign up",
+    "registering": "Creating account…",
+    "haveAccount": "Already have an account?",
+    "loginLink": "Log in"
+  },
+  "avatar": {
+    "add": "Add photo",
+    "alt": "Profile photo",
+    "processing": "Processing…",
+    "remove": "Remove photo",
+    "readError": "Couldn't read this image. Try another one."
+  },
   "home": {
-    "title": "Train. Eat. Track.",
-    "subtitle": "Workout plans, live workout tracking and diet plans - all in one place.",
-    "serverStatus": "Server status",
-    "statusChecking": "Checking…",
-    "statusOk": "Connected",
-    "statusError": "Unavailable"
+    "greeting": "Hi, {{username}}",
+    "subtitle": "Your workout plans, workouts and diet will appear here."
   },
   "errors": {
     "NOT_FOUND": "Not found",
     "INVALID_JSON": "Invalid request",
     "PAYLOAD_TOO_LARGE": "The request is too large",
     "SERVER_ERROR": "Something went wrong. Please try again.",
-    "NETWORK_ERROR": "Cannot reach the server. Check your connection."
+    "NETWORK_ERROR": "Cannot reach the server. Check your connection.",
+    "TOO_MANY_REQUESTS": "Too many attempts. Please try again in a few minutes.",
+    "UNAUTHORIZED": "Please log in again.",
+    "MISSING_CREDENTIALS": "Enter your username or email and password.",
+    "INVALID_CREDENTIALS": "Wrong username, email or password.",
+    "INVALID_USERNAME": "3-30 characters: English letters, digits, _ or .",
+    "USERNAME_TAKEN": "This username is already taken.",
+    "INVALID_EMAIL": "Enter a valid email address.",
+    "EMAIL_TAKEN": "An account with this email already exists.",
+    "INVALID_PHONE": "Enter a valid phone number.",
+    "INVALID_PASSWORD": "The password must be at least 8 characters.",
+    "INVALID_AVATAR": "This image can't be used. Try another one."
   }
 }

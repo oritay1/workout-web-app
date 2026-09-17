@@ -1,0 +1,51 @@
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-field__label {
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.form-field__control {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.form-field__input {
+  width: 100%;
+  height: 48px;
+  padding-inline: 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  background: var(--color-bg);
+  /* Inputs in LTR fields (email, phone) still align with the page direction */
+  text-align: start;
+}
+
+.form-field__input:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: -1px;
+  border-color: transparent;
+}
+
+.form-field__input.password-field__input {
+  padding-inline-end: 72px;
+}
+
+.form-field__input--invalid {
+  border-color: var(--color-danger);
+}
+
+.form-field__description {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.form-field__description--error {
+  color: var(--color-danger);
+}

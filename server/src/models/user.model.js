@@ -1,5 +1,8 @@
 import mongoose from 'mongoose';
 
+// 'system' = follow the device's light/dark setting
+export const THEME_PREFERENCES = ['light', 'dark', 'system'];
+
 const userSchema = new mongoose.Schema(
   {
     username: { type: String, required: true, trim: true },
@@ -8,6 +11,11 @@ const userSchema = new mongoose.Schema(
     passwordHash: { type: String, required: true, select: false },
     // Small square JPEG as a data URL, resized in the browser
     avatar: { type: String },
+    // Display preferences, applied on every device the user logs in from (unset until first saved)
+    settings: {
+      language: { type: String },
+      theme: { type: String, enum: THEME_PREFERENCES },
+    },
     // Set once the user saved or skipped the health screen shown after registration
     onboardingCompleted: { type: Boolean, default: false },
     // Incrementing it invalidates every session token issued before

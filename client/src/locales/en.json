@@ -110,7 +110,9 @@
     "ENTRY_NOT_FOUND": "This entry no longer exists.",
     "MEAL_NOT_FOUND": "This meal is no longer in your active plan.",
     "DAY_FULL": "Too many entries for one day.",
-    "CLIPBOARD_UNAVAILABLE": "Copying isn't available in this browser. Use Download instead."
+    "CLIPBOARD_UNAVAILABLE": "Copying isn't available in this browser. Use Download instead.",
+    "INVALID_CURRENT_PASSWORD": "The current password is wrong.",
+    "SAME_PASSWORD": "The new password must be different from the current one."
   },
   "tagInput": {
     "add": "Add",
@@ -679,5 +681,23 @@
     "downloaded": "Downloaded.",
     "copied": "Copied to clipboard.",
     "privacy": "The file contains private health information. Only share it with tools and people you trust."
+  },
+  "settings": {
+    "title": "Display",
+    "description": "Saved to your account, so they apply on every device you log in from.",
+    "theme": "Theme",
+    "themes": {
+      "system": "Same as device",
+      "light": "Light",
+      "dark": "Dark"
+    }
+  },
+  "security": {
+    "title": "Password",
+    "description": "Changing it logs you out on all other devices.",
+    "currentPassword": "Current password",
+    "newPassword": "New password",
+    "change": "Change password",
+    "changed": "Password changed. Other devices were logged out."
   }
 }

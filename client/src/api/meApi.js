@@ -40,3 +40,8 @@ export function exportMarkdown(days, timeZone) {
   const query = new URLSearchParams({ days: String(days), tz: timeZone }).toString()
   return request(`/me/export.md?${query}`, { responseType: 'text' })
 }
+
+// { language?, theme? } where theme is 'light' | 'dark' | 'system'
+export function updateSettings(changes) {
+  return request('/me/settings', json('PATCH', changes))
+}

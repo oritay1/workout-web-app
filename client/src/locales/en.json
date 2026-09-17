@@ -1,0 +1,25 @@
+{
+  "app": {
+    "name": "Workout App"
+  },
+  "header": {
+    "language": "Language",
+    "switchToDark": "Switch to dark mode",
+    "switchToLight": "Switch to light mode"
+  },
+  "home": {
+    "title": "Train. Eat. Track.",
+    "subtitle": "Workout plans, live workout tracking and diet plans - all in one place.",
+    "serverStatus": "Server status",
+    "statusChecking": "Checking…",
+    "statusOk": "Connected",
+    "statusError": "Unavailable"
+  },
+  "errors": {
+    "NOT_FOUND": "Not found",
+    "INVALID_JSON": "Invalid request",
+    "PAYLOAD_TOO_LARGE": "The request is too large",
+    "SERVER_ERROR": "Something went wrong. Please try again.",
+    "NETWORK_ERROR": "Cannot reach the server. Check your connection."
+  }
+}

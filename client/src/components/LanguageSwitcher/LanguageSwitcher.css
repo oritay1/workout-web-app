@@ -1,0 +1,8 @@
+.language-switcher {
+  height: 40px;
+  padding-inline: 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  background: var(--color-surface);
+  cursor: pointer;
+}

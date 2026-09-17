@@ -1,0 +1,62 @@
+.food-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 720px;
+  margin-inline: auto;
+  padding: 16px 16px 32px;
+}
+
+.food-detail__back {
+  align-self: flex-start;
+  padding-block: 8px;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.food-detail__title {
+  margin: 0;
+  font-size: 1.4rem;
+  overflow-wrap: anywhere;
+}
+
+.food-detail__subtitle,
+.food-detail__source {
+  margin: 2px 0 0;
+  color: var(--color-text-muted);
+  overflow-wrap: anywhere;
+}
+
+.food-detail__source {
+  font-size: 0.85rem;
+}
+
+.food-detail__source a {
+  color: var(--color-primary);
+}
+
+.food-detail__calculator {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 10px;
+}
+
+.food-detail__total {
+  margin: 14px 0 4px;
+  font-weight: 500;
+}
+
+.food-detail__note {
+  margin: 10px 0 0;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.food-detail__actions {
+  display: flex;
+  gap: 10px;
+}
+
+.food-detail__actions .button {
+  flex: 1;
+}

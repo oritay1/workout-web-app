@@ -35,6 +35,16 @@ const ITEMS = [
     labelKey: 'nav.exercises',
     icon: <path d="M6.5 6.5v11M17.5 6.5v11M3 9.5v5M21 9.5v5M6.5 12h11" />,
   },
+  {
+    to: ROUTES.foods,
+    labelKey: 'nav.nutrition',
+    icon: (
+      <>
+        <path d="M12 7c-2-2.5-7-2-7 3.5C5 16 9 21 12 21s7-5 7-10.5C19 5 14 4.5 12 7z" />
+        <path d="M12 7c0-2 1-3.5 3-4" />
+      </>
+    ),
+  },
 ]
 
 // Main navigation for logged-in users, fixed to the bottom of the screen (thumb-friendly on phones)

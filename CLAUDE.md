@@ -34,7 +34,14 @@
 - Foods come from a built-in food library or custom foods saved to the user. Nutrition values are stored per 100 g or per 100 ml (liquids), with calories, protein, carbs, fat, and optional fiber/sugar/sodium.
 - Daily log: the user adds or removes what they actually ate/drank each day (from the plan or anything else) and sees progress against the active plan's goals, including water intake.
 - The user can edit the plan itself and the daily log at any time.
-- Built-in food library source: **USDA FoodData Central** (Foundation Foods + SR Legacy datasets). Chosen over Open Food Facts because the values are lab-measured and curated, not crowd-sourced, and the data is public domain (CC0). Import it once with a server script from the bulk download into our own collection (no runtime dependency on the USDA API). Keep the USDA `fdcId` on each food for traceability. USDA names are English only — Hebrew names need a translation step at import time (decide how when implementing the food library). Branded/packaged products (Open Food Facts) can be added later as a second source if needed.
+- Built-in food library source: **USDA FoodData Central** (Foundation Foods + SR Legacy). Chosen over Open Food Facts because the values are lab-measured and curated, not crowd-sourced, and the data is public domain (CC0). Branded/packaged products (Open Food Facts) can be added later as a second source if needed.
+- Food library implementation:
+  - `server/scripts/build-usda-foods.js` turns the USDA bulk JSON downloads into `server/src/data/usdaFoods.json.gz` (committed, ~0.4 MB, ~7,600 foods). It keeps energy, macros and 8 micronutrients per 100 g plus household portions, and skips baby foods, Alaska Native foods and foods without energy/macros. Re-run it only when updating to a newer USDA release (instructions at the top of the script).
+  - On server start `syncUsdaFoods()` upserts the file into the `Food` collection, but only when the file or the Hebrew names changed (hash stored in `DataVersion`). USDA foods missing from a newer file are archived, never deleted.
+  - USDA names are English. `server/src/data/usdaHebrewNames.js` holds hand-written Hebrew names for ~170 common foods (fdcId -> name); those are also the "featured" foods shown when browsing. `foodSearchSynonyms.js` maps Hebrew search words to English words (with prefix/plural handling) so Hebrew searches also find untranslated foods. Add entries there when users can't find something in Hebrew.
+  - Search is server-side (`GET /api/foods?q=&category=&source=&language=`), ranked: own foods, featured foods, names starting with the query, shorter names.
+  - Custom foods: per 100 g or 100 ml (`basis`), energy + protein/carbs/fat required, optional portions. Deleting archives them (like custom exercises).
+  - Liquids: USDA lists drinks per 100 g; treat 100 ml ≈ 100 g for drinks (documented to the user). Custom liquids use `basis: 'ml'`.
 
 ### Roadmap (one branch + PR per stage)
 

@@ -100,7 +100,10 @@
     "SESSION_NOT_FOUND": "This workout doesn't exist.",
     "SESSION_IN_PROGRESS": "You already have a workout in progress.",
     "SESSION_ALREADY_FINISHED": "This workout is already finished.",
-    "WORKOUT_NOT_FOUND": "This workout is no longer in the plan."
+    "WORKOUT_NOT_FOUND": "This workout is no longer in the plan.",
+    "FOOD_NOT_FOUND": "This food doesn't exist or can't be edited.",
+    "FOOD_NAME_TAKEN": "You already have a food with this name.",
+    "MACROS_EXCEED_100": "Protein, carbs and fat can't add up to more than 100 per 100."
   },
   "tagInput": {
     "add": "Add",
@@ -245,14 +248,19 @@
     "hours": "hours",
     "seconds": "sec",
     "minutes": "min",
-    "km": "km"
+    "km": "km",
+    "g": "g",
+    "ml": "ml",
+    "mg": "mg",
+    "kcal": "kcal"
   },
   "nav": {
     "label": "Main navigation",
     "home": "Home",
     "exercises": "Exercises",
     "plans": "Plans",
-    "history": "History"
+    "history": "History",
+    "nutrition": "Nutrition"
   },
   "exercises": {
     "title": "Exercises",
@@ -460,5 +468,107 @@
     },
     "delete": "Delete workout",
     "confirmDelete": "Delete this workout from your history?"
+  },
+  "foods": {
+    "title": "Food library",
+    "new": "New food",
+    "search": "Search foods",
+    "searchPlaceholder": "e.g. chicken breast",
+    "category": "Category",
+    "source": "Source",
+    "sources": {
+      "usda": "USDA",
+      "custom": "My foods"
+    },
+    "usdaDataTypes": {
+      "foundation": "Foundation Foods",
+      "srLegacy": "SR Legacy"
+    },
+    "browseHint": "Showing your foods and common foods. Search to find any of ~7,600 foods.",
+    "empty": "No foods found. Try other words, or add your own food.",
+    "customBadge": "My food",
+    "per100": {
+      "g": "/ 100 g",
+      "ml": "/ 100 ml"
+    },
+    "macroShort": {
+      "protein": "P",
+      "carbs": "C",
+      "fat": "F"
+    },
+    "usdaCredit": "Nutrition data: USDA FoodData Central (public domain).",
+    "back": "← Food library",
+    "calculator": "Nutrition",
+    "calculatorHint": "Pick an amount to see its nutrition.",
+    "quantity": "Quantity",
+    "unit": "Unit",
+    "nutritionFor": "For {{amount}} {{unit}}",
+    "liquidNote": "USDA lists drinks per 100 g; 100 ml is about the same for most drinks.",
+    "confirmDelete": "Delete \"{{name}}\" from your foods?",
+    "categories": {
+      "dairyEggs": "Dairy & eggs",
+      "poultry": "Poultry",
+      "beef": "Beef",
+      "pork": "Pork",
+      "lambVealGame": "Lamb, veal & game",
+      "sausagesDeli": "Sausages & deli meats",
+      "fishSeafood": "Fish & seafood",
+      "legumes": "Legumes",
+      "nutsSeeds": "Nuts & seeds",
+      "grainsPasta": "Grains & pasta",
+      "bakedGoods": "Bread & baked goods",
+      "breakfastCereals": "Breakfast cereals",
+      "vegetables": "Vegetables",
+      "fruits": "Fruits & juices",
+      "fatsOils": "Fats & oils",
+      "soupsSauces": "Soups & sauces",
+      "spicesHerbs": "Spices & herbs",
+      "sweets": "Sweets",
+      "snacks": "Snacks",
+      "beverages": "Beverages",
+      "meals": "Meals & side dishes",
+      "fastFood": "Fast food",
+      "restaurant": "Restaurant foods",
+      "supplements": "Supplements",
+      "other": "Other"
+    },
+    "nutrients": {
+      "energyKcal": "Calories",
+      "proteinG": "Protein",
+      "carbsG": "Carbohydrates",
+      "fatG": "Fat",
+      "fiberG": "Fiber",
+      "sugarsG": "Sugars",
+      "saturatedFatG": "Saturated fat",
+      "cholesterolMg": "Cholesterol",
+      "sodiumMg": "Sodium",
+      "potassiumMg": "Potassium",
+      "calciumMg": "Calcium",
+      "ironMg": "Iron"
+    },
+    "form": {
+      "newTitle": "New food",
+      "editTitle": "Edit food",
+      "details": "Details",
+      "name": "Name",
+      "namePlaceholder": "e.g. Protein bar",
+      "brand": "Brand",
+      "basis": "Values are per",
+      "basisHint": "Use 100 ml for drinks and other liquids.",
+      "basisOptions": {
+        "g": "100 g",
+        "ml": "100 ml"
+      },
+      "nutrition": "Nutrition values",
+      "nutritionHint": "Per 100 {{unit}}, as printed on the nutrition label.",
+      "moreNutrients": "More nutrients (optional)",
+      "portions": "Portions",
+      "portionsHint": "Optional household measures, e.g. \"1 bar\" = 60 g.",
+      "portionLabel": "Name",
+      "portionLabelPlaceholder": "e.g. 1 bar",
+      "portionAmount": "Amount",
+      "addPortion": "Add portion",
+      "removePortion": "Remove portion {{number}}"
+    }
   }
 }

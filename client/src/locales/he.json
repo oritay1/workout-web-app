@@ -102,7 +102,10 @@
     "SESSION_NOT_FOUND": "האימון הזה לא קיים.",
     "SESSION_IN_PROGRESS": "כבר יש לכם אימון בתהליך.",
     "SESSION_ALREADY_FINISHED": "האימון הזה כבר הסתיים.",
-    "WORKOUT_NOT_FOUND": "האימון הזה כבר לא נמצא בתוכנית."
+    "WORKOUT_NOT_FOUND": "האימון הזה כבר לא נמצא בתוכנית.",
+    "FOOD_NOT_FOUND": "המזון הזה לא קיים או שאי אפשר לערוך אותו.",
+    "FOOD_NAME_TAKEN": "כבר יש לכם מזון בשם הזה.",
+    "MACROS_EXCEED_100": "חלבון, פחמימות ושומן לא יכולים להסתכם ביותר מ-100 ל-100."
   },
   "tagInput": {
     "add": "הוספה",
@@ -247,14 +250,19 @@
     "hours": "שעות",
     "seconds": "שנ׳",
     "minutes": "דק׳",
-    "km": "ק״מ"
+    "km": "ק״מ",
+    "g": "ג׳",
+    "ml": "מ״ל",
+    "mg": "מ״ג",
+    "kcal": "קק״ל"
   },
   "nav": {
     "label": "ניווט ראשי",
     "home": "בית",
     "exercises": "תרגילים",
     "plans": "תוכניות",
-    "history": "היסטוריה"
+    "history": "היסטוריה",
+    "nutrition": "תזונה"
   },
   "exercises": {
     "title": "תרגילים",
@@ -468,5 +476,107 @@
     },
     "delete": "מחיקת האימון",
     "confirmDelete": "למחוק את האימון מההיסטוריה?"
+  },
+  "foods": {
+    "title": "מאגר מזונות",
+    "new": "מזון חדש",
+    "search": "חיפוש מזון",
+    "searchPlaceholder": "למשל חזה עוף",
+    "category": "קטגוריה",
+    "source": "מקור",
+    "sources": {
+      "usda": "USDA",
+      "custom": "המזונות שלי"
+    },
+    "usdaDataTypes": {
+      "foundation": "Foundation Foods",
+      "srLegacy": "SR Legacy"
+    },
+    "browseHint": "מוצגים המזונות שלכם ומזונות נפוצים. חפשו כדי למצוא כל אחד מכ-7,600 מזונות.",
+    "empty": "לא נמצאו מזונות. נסו מילים אחרות או הוסיפו מזון משלכם.",
+    "customBadge": "שלי",
+    "per100": {
+      "g": "ל-100 ג׳",
+      "ml": "ל-100 מ״ל"
+    },
+    "macroShort": {
+      "protein": "חלבון",
+      "carbs": "פחמ׳",
+      "fat": "שומן"
+    },
+    "usdaCredit": "נתוני תזונה: USDA FoodData Central (נחלת הכלל). חלק מהמזונות מופיעים באנגלית.",
+    "back": "→ מאגר מזונות",
+    "calculator": "ערכים תזונתיים",
+    "calculatorHint": "בחרו כמות כדי לראות את הערכים שלה.",
+    "quantity": "כמות",
+    "unit": "יחידה",
+    "nutritionFor": "עבור {{amount}} {{unit}}",
+    "liquidNote": "ב-USDA משקאות מופיעים ל-100 ג׳; ברוב המשקאות 100 מ״ל הם בערך אותו דבר.",
+    "confirmDelete": "למחוק את \"{{name}}\" מהמזונות שלכם?",
+    "categories": {
+      "dairyEggs": "מוצרי חלב וביצים",
+      "poultry": "עוף והודו",
+      "beef": "בקר",
+      "pork": "חזיר",
+      "lambVealGame": "כבש, עגל ובשר ציד",
+      "sausagesDeli": "נקניקים ונקניקיות",
+      "fishSeafood": "דגים ופירות ים",
+      "legumes": "קטניות",
+      "nutsSeeds": "אגוזים וזרעים",
+      "grainsPasta": "דגנים ופסטה",
+      "bakedGoods": "לחם ומאפים",
+      "breakfastCereals": "דגני בוקר",
+      "vegetables": "ירקות",
+      "fruits": "פירות ומיצים",
+      "fatsOils": "שומנים ושמנים",
+      "soupsSauces": "מרקים ורטבים",
+      "spicesHerbs": "תבלינים ועשבי תיבול",
+      "sweets": "מתוקים",
+      "snacks": "חטיפים",
+      "beverages": "משקאות",
+      "meals": "מנות ותוספות",
+      "fastFood": "מזון מהיר",
+      "restaurant": "מנות מסעדה",
+      "supplements": "תוספי תזונה",
+      "other": "אחר"
+    },
+    "nutrients": {
+      "energyKcal": "קלוריות",
+      "proteinG": "חלבון",
+      "carbsG": "פחמימות",
+      "fatG": "שומן",
+      "fiberG": "סיבים תזונתיים",
+      "sugarsG": "סוכרים",
+      "saturatedFatG": "שומן רווי",
+      "cholesterolMg": "כולסטרול",
+      "sodiumMg": "נתרן",
+      "potassiumMg": "אשלגן",
+      "calciumMg": "סידן",
+      "ironMg": "ברזל"
+    },
+    "form": {
+      "newTitle": "מזון חדש",
+      "editTitle": "עריכת מזון",
+      "details": "פרטים",
+      "name": "שם",
+      "namePlaceholder": "למשל חטיף חלבון",
+      "brand": "מותג",
+      "basis": "הערכים הם ל-",
+      "basisHint": "למשקאות ונוזלים אחרים השתמשו ב-100 מ״ל.",
+      "basisOptions": {
+        "g": "100 ג׳",
+        "ml": "100 מ״ל"
+      },
+      "nutrition": "ערכים תזונתיים",
+      "nutritionHint": "ל-100 {{unit}}, כמו שמופיע בטבלת הערכים שעל האריזה.",
+      "moreNutrients": "ערכים נוספים (לא חובה)",
+      "portions": "מנות",
+      "portionsHint": "מידות ביתיות לא חובה, למשל \"חטיף אחד\" = 60 ג׳.",
+      "portionLabel": "שם",
+      "portionLabelPlaceholder": "למשל חטיף אחד",
+      "portionAmount": "כמות",
+      "addPortion": "הוספת מנה",
+      "removePortion": "הסרת מנה {{number}}"
+    }
   }
 }

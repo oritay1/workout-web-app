@@ -7,7 +7,10 @@
     "optional": "(optional)",
     "save": "Save",
     "saving": "Saving…",
-    "saved": "Saved"
+    "saved": "Saved",
+    "edit": "Edit",
+    "delete": "Delete",
+    "cancel": "Cancel"
   },
   "header": {
     "language": "Language",
@@ -71,7 +74,9 @@
     "INVALID_PASSWORD": "The password must be at least 8 characters.",
     "INVALID_AVATAR": "This image can't be used. Try another one.",
     "INVALID_FIELD": "Invalid value",
-    "MEASUREMENT_NOT_FOUND": "This entry no longer exists."
+    "MEASUREMENT_NOT_FOUND": "This entry no longer exists.",
+    "EXERCISE_NOT_FOUND": "This exercise doesn't exist or can't be edited.",
+    "EXERCISE_NAME_TAKEN": "You already have an exercise with this name."
   },
   "tagInput": {
     "add": "Add",
@@ -214,5 +219,86 @@
     "bpm": "bpm",
     "mmHg": "mmHg",
     "hours": "hours"
+  },
+  "nav": {
+    "label": "Main navigation",
+    "home": "Home",
+    "exercises": "Exercises"
+  },
+  "exercises": {
+    "title": "Exercises",
+    "new": "New exercise",
+    "search": "Search",
+    "searchPlaceholder": "e.g. squat",
+    "filters": {
+      "muscle": "Muscle",
+      "equipment": "Equipment",
+      "type": "Type",
+      "source": "Source",
+      "all": "All",
+      "builtIn": "Built-in",
+      "custom": "My exercises",
+      "clear": "Clear filters"
+    },
+    "count_one": "{{count}} exercise",
+    "count_other": "{{count}} exercises",
+    "empty": "No exercises match your search.",
+    "customBadge": "Custom",
+    "editNamed": "Edit {{name}}",
+    "deleteNamed": "Delete {{name}}",
+    "confirmDelete": "Delete \"{{name}}\"? This can't be undone.",
+    "backToLibrary": "← Exercise library",
+    "form": {
+      "newTitle": "New exercise",
+      "editTitle": "Edit exercise",
+      "name": "Name",
+      "namePlaceholder": "e.g. Padel",
+      "nameRequired": "Enter a name.",
+      "type": "Type",
+      "equipment": "Equipment",
+      "primaryMuscles": "Main muscles",
+      "secondaryMuscles": "Secondary muscles",
+      "notes": "Notes",
+      "notesPlaceholder": "Technique cues, settings, links…"
+    },
+    "types": {
+      "strength": "Strength (weights)",
+      "bodyweight": "Bodyweight",
+      "cardio": "Cardio",
+      "duration": "Timed"
+    },
+    "typeHints": {
+      "strength": "Tracked as sets × reps × weight.",
+      "bodyweight": "Tracked as sets × reps.",
+      "cardio": "Tracked as distance and duration.",
+      "duration": "Tracked as time."
+    },
+    "equipment": {
+      "none": "No equipment",
+      "barbell": "Barbell",
+      "dumbbell": "Dumbbells",
+      "kettlebell": "Kettlebell",
+      "machine": "Machine",
+      "cable": "Cable",
+      "band": "Resistance band",
+      "pullUpBar": "Pull-up bar",
+      "dipBars": "Dip bars",
+      "cardioMachine": "Cardio machine",
+      "other": "Other"
+    },
+    "muscles": {
+      "chest": "Chest",
+      "back": "Back",
+      "shoulders": "Shoulders",
+      "biceps": "Biceps",
+      "triceps": "Triceps",
+      "forearms": "Forearms",
+      "core": "Core",
+      "glutes": "Glutes",
+      "quads": "Quads",
+      "hamstrings": "Hamstrings",
+      "calves": "Calves",
+      "fullBody": "Full body"
+    }
   }
 }

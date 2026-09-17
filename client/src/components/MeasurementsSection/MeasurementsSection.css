@@ -1,0 +1,114 @@
+.measurements__tiles {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+@media (min-width: 600px) {
+  .measurements__tiles {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.measurements__tile {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  min-height: 84px;
+  padding: 10px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  background: var(--color-bg);
+  text-align: start;
+  cursor: pointer;
+}
+
+.measurements__tile[aria-pressed='true'] {
+  border-color: var(--color-primary);
+  box-shadow: inset 0 0 0 1px var(--color-primary);
+}
+
+.measurements__tile-label {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.measurements__tile-value {
+  font-weight: 700;
+  font-size: 1.05rem;
+  /* Keep "120/80 mmHg" readable in RTL */
+  unicode-bidi: plaintext;
+}
+
+.measurements__tile-date {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.measurements__form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.measurements__subtitle {
+  margin: 20px 0 8px;
+  font-size: 1rem;
+}
+
+.measurements__form .measurements__subtitle {
+  margin: 0;
+}
+
+.measurements__inputs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+}
+
+.measurements__empty {
+  margin: 0;
+  color: var(--color-text-muted);
+}
+
+.measurements__history {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.measurements__row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-block: 6px;
+  border-block-end: 1px solid var(--color-border);
+}
+
+.measurements__row-date {
+  flex: 1;
+  color: var(--color-text-muted);
+}
+
+.measurements__row-value {
+  font-weight: 500;
+  unicode-bidi: plaintext;
+}
+
+.measurements__delete {
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background: none;
+  color: var(--color-text-muted);
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.measurements__delete:hover {
+  background: color-mix(in srgb, var(--color-danger) 12%, transparent);
+  color: var(--color-danger);
+}

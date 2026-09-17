@@ -30,7 +30,7 @@ function AuthProvider({ children }) {
   }, [])
 
   const value = useMemo(
-    () => ({ user, isLoading: user === undefined, login, register, logout }),
+    () => ({ user, isLoading: user === undefined, login, register, logout, updateUser: setUser }),
     [user, login, register, logout],
   )
 

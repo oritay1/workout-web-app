@@ -16,14 +16,16 @@ export async function request(path, options = {}) {
 
   const data = res.status === 204 ? null : await res.json().catch(() => null)
   if (!res.ok) {
-    throw createError(res.status, data?.code || 'SERVER_ERROR')
+    throw createError(res.status, data?.code || 'SERVER_ERROR', data?.field)
   }
   return data
 }
 
-function createError(status, code) {
+function createError(status, code, field) {
   const error = new Error(code)
   error.status = status
   error.code = code
+  // Which input was rejected, for INVALID_FIELD errors
+  error.field = field
   return error
 }

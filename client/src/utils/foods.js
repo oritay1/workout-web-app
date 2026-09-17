@@ -95,3 +95,9 @@ export function translatePortionLabel(label, language) {
   const translatedRest = /\s/.test(rest) ? null : translateWords(rest)
   return translatedRest ? `${translatedHead}, ${translatedRest}` : `${translatedHead} (${rest})`
 }
+
+// Option text for a portion, e.g. "1 cup · 226 g". No extra parentheses and Unicode isolation marks (FSI/PDI)
+// around each part: <option> can't be styled, and mixed Hebrew/English text otherwise gets reordered in RTL
+export function formatPortionOption(portion, language, unitLabel) {
+  return `\u2068${translatePortionLabel(portion.label, language)}\u2069 · \u2068${formatAmount(portion.amount, language)} ${unitLabel}\u2069`
+}

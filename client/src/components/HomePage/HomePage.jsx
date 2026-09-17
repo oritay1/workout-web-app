@@ -1,14 +1,17 @@
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link, useNavigate } from 'react-router'
+import { getDay } from '../../api/dietApi.js'
 import { listPlans } from '../../api/plansApi.js'
 import { getCurrentSession, listSessions, startSession } from '../../api/sessionsApi.js'
 import { ROUTES, sessionDetailPath } from '../../constants/routes.js'
 import { useAuth } from '../../hooks/useAuth.js'
 import { useErrorMessage } from '../../hooks/useErrorMessage.js'
+import { toDateInputValue } from '../../utils/date.js'
 import { formatDateTime, formatDuration, getSessionTitle } from '../../utils/sessionFormat.js'
 import { startOfWeek } from '../../utils/week.js'
 import Loader from '../Loader/Loader.jsx'
+import MacroProgress from '../MacroProgress/MacroProgress.jsx'
 import SectionCard from '../SectionCard/SectionCard.jsx'
 import WeekSchedule from '../WeekSchedule/WeekSchedule.jsx'
 import './HomePage.css'
@@ -31,13 +34,15 @@ function HomePage() {
       listPlans(),
       listSessions({ from: startOfWeek().toISOString() }),
       listSessions(),
+      getDay(toDateInputValue()),
     ])
-      .then(([current, plans, week, recent]) =>
+      .then(([current, plans, week, recent, nutrition]) =>
         setData({
           current: current.session,
           activePlan: plans.plans.find((plan) => plan.isActive) ?? null,
           weekSessions: week.sessions,
           recent: recent.sessions.slice(0, RECENT_COUNT),
+          nutritionDay: nutrition.day,
         }),
       )
       .catch((err) => setErrorCode(err.code))
@@ -74,7 +79,7 @@ function HomePage() {
     )
   }
 
-  const { current, activePlan, weekSessions, recent } = data
+  const { current, activePlan, weekSessions, recent, nutritionDay } = data
   const today = new Date().getDay()
   const todaysWorkouts = activePlan
     ? activePlan.workouts
@@ -179,6 +184,23 @@ function HomePage() {
           <WeekSchedule workouts={activePlan.workouts} completedSessions={weekSessions} />
         </SectionCard>
       )}
+
+      <SectionCard title={t('home.nutritionToday')} description={nutritionDay.planName ?? undefined}>
+        <div className="home-page__nutrition">
+          <MacroProgress
+            large
+            label={t('foods.nutrients.energyKcal')}
+            value={nutritionDay.totals.energyKcal}
+            target={nutritionDay.targets.energyKcal}
+            unit="kcal"
+          />
+          <MacroProgress label={t('foods.nutrients.proteinG')} value={nutritionDay.totals.proteinG} target={nutritionDay.targets.proteinG} unit="g" />
+          <MacroProgress label={t('nutrition.water')} value={nutritionDay.waterMl} target={nutritionDay.targets.waterMl} unit="ml" />
+        </div>
+        <Link className="home-page__all" to={ROUTES.nutrition}>
+          {t('home.openNutrition')}
+        </Link>
+      </SectionCard>
 
       <SectionCard title={t('home.recent')}>
         {recent.length === 0 ? (

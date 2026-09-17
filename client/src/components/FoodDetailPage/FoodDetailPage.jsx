@@ -4,7 +4,7 @@ import { Link, useNavigate, useParams } from 'react-router'
 import { deleteFood, getFood } from '../../api/foodsApi.js'
 import { ROUTES, editFoodPath } from '../../constants/routes.js'
 import { useErrorMessage } from '../../hooks/useErrorMessage.js'
-import { formatAmount, getFoodName, translatePortionLabel } from '../../utils/foods.js'
+import { formatAmount, formatPortionOption, getFoodName } from '../../utils/foods.js'
 import FormField from '../FormField/FormField.jsx'
 import Loader from '../Loader/Loader.jsx'
 import NutrientTable from '../NutrientTable/NutrientTable.jsx'
@@ -119,7 +119,7 @@ function FoodDetailPage() {
             <option value={BASE_UNIT}>{baseUnitLabel}</option>
             {food.portions.map((portion, index) => (
               <option key={portion.label} value={index}>
-                {translatePortionLabel(portion.label, language)} ({formatAmount(portion.amount, language)} {baseUnitLabel})
+                {formatPortionOption(portion, language, baseUnitLabel)}
               </option>
             ))}
           </FormField>

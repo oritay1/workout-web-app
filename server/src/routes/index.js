@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import authRoutes from './auth.routes.js';
+import dietRoutes from './diet.routes.js';
 import exerciseRoutes from './exercise.routes.js';
 import foodRoutes from './food.routes.js';
 import healthRoutes from './health.routes.js';
@@ -17,6 +18,7 @@ router.use('/exercises', exerciseRoutes);
 router.use('/plans', workoutPlanRoutes);
 router.use('/sessions', workoutSessionRoutes);
 router.use('/foods', foodRoutes);
+router.use('/diet', dietRoutes);
 
 // Unknown API paths return JSON 404 instead of falling through to the SPA
 router.use(notFound);

@@ -1,0 +1,145 @@
+/* The sticky save bar reuses the workout plan editor styles */
+@import '../PlanEditorPage/PlanEditorPage.css';
+
+.diet-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 720px;
+  margin-inline: auto;
+  padding: 16px 16px 0;
+}
+
+.diet-editor__back {
+  align-self: flex-start;
+  padding-block: 8px;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.diet-editor__title {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.diet-editor__section-title {
+  margin: 8px 0 0;
+  font-size: 1.2rem;
+}
+
+.diet-editor__muted {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.diet-editor__targets {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.diet-editor__suggest {
+  width: 100%;
+  margin-top: 14px;
+}
+
+.diet-editor__suggestion {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 12px 0 0;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: var(--color-bg);
+}
+
+.diet-editor__suggestion p {
+  margin: 0;
+}
+
+.diet-editor__suggestion a {
+  color: var(--color-primary);
+}
+
+.diet-editor__meal {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px;
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+
+.diet-editor__meal-header {
+  display: grid;
+  grid-template-columns: 3fr 2fr auto;
+  align-items: start;
+  gap: 8px;
+}
+
+.diet-editor__remove-meal {
+  margin-top: 30px;
+}
+
+.diet-editor__items {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.diet-editor__item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-block: 6px;
+  border-block-end: 1px solid var(--color-border);
+}
+
+.diet-editor__item-main {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  border: none;
+  background: none;
+  text-align: start;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+}
+
+.diet-editor__item-kcal {
+  flex-shrink: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.diet-editor__item-remove {
+  flex-shrink: 0;
+  border-color: transparent;
+  background: none;
+  color: var(--color-text-muted);
+}
+
+.diet-editor__meal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.diet-editor__meal-footer .button {
+  min-height: 40px;
+  border-style: dashed;
+}
+
+.diet-editor__add-meal {
+  border-style: dashed;
+}
+
+.diet-editor__totals {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

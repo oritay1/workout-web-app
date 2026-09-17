@@ -1,5 +1,7 @@
 import { Navigate, createBrowserRouter } from 'react-router'
 import App from './App.jsx'
+import DietPlanEditorPage from './components/DietPlanEditorPage/DietPlanEditorPage.jsx'
+import DietPlansPage from './components/DietPlansPage/DietPlansPage.jsx'
 import ExerciseFormPage from './components/ExerciseFormPage/ExerciseFormPage.jsx'
 import ExercisesPage from './components/ExercisesPage/ExercisesPage.jsx'
 import FoodDetailPage from './components/FoodDetailPage/FoodDetailPage.jsx'
@@ -9,6 +11,7 @@ import HistoryPage from './components/HistoryPage/HistoryPage.jsx'
 import HomePage from './components/HomePage/HomePage.jsx'
 import LiveWorkoutPage from './components/LiveWorkoutPage/LiveWorkoutPage.jsx'
 import LoginPage from './components/LoginPage/LoginPage.jsx'
+import NutritionPage from './components/NutritionPage/NutritionPage.jsx'
 import OnboardingPage from './components/OnboardingPage/OnboardingPage.jsx'
 import PlanEditorPage from './components/PlanEditorPage/PlanEditorPage.jsx'
 import PlansPage from './components/PlansPage/PlansPage.jsx'
@@ -50,6 +53,10 @@ export const router = createBrowserRouter([
           { path: ROUTES.newFood, element: <FoodFormPage /> },
           { path: ROUTES.foodDetail, element: <FoodDetailPage /> },
           { path: ROUTES.editFood, element: <FoodFormPage /> },
+          { path: ROUTES.nutrition, element: <NutritionPage /> },
+          { path: ROUTES.dietPlans, element: <DietPlansPage /> },
+          { path: ROUTES.newDietPlan, element: <DietPlanEditorPage /> },
+          { path: ROUTES.editDietPlan, element: <DietPlanEditorPage /> },
         ],
       },
       { path: '*', element: <Navigate to={ROUTES.home} replace /> },

@@ -48,3 +48,12 @@
   direction: ltr;
   unicode-bidi: isolate;
 }
+
+.week-schedule__workout--done {
+  color: var(--color-success);
+  font-weight: 500;
+}
+
+.week-schedule__check {
+  margin-inline-end: 4px;
+}

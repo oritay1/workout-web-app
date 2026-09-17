@@ -21,6 +21,16 @@ const ITEMS = [
     ),
   },
   {
+    to: ROUTES.history,
+    labelKey: 'nav.history',
+    icon: (
+      <>
+        <circle cx="12" cy="12" r="9" />
+        <path d="M12 7v5l3 2" />
+      </>
+    ),
+  },
+  {
     to: ROUTES.exercises,
     labelKey: 'nav.exercises',
     icon: <path d="M6.5 6.5v11M17.5 6.5v11M3 9.5v5M21 9.5v5M6.5 12h11" />,

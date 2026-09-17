@@ -2,8 +2,10 @@ import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router'
 import { activatePlan, deletePlan, listPlans } from '../../api/plansApi.js'
+import { listSessions } from '../../api/sessionsApi.js'
 import { ROUTES } from '../../constants/routes.js'
 import { useErrorMessage } from '../../hooks/useErrorMessage.js'
+import { startOfWeek } from '../../utils/week.js'
 import Loader from '../Loader/Loader.jsx'
 import PlanCard from '../PlanCard/PlanCard.jsx'
 import SectionCard from '../SectionCard/SectionCard.jsx'
@@ -17,11 +19,15 @@ function PlansPage() {
   const [plans, setPlans] = useState(null)
   const [errorCode, setErrorCode] = useState('')
   const [busyId, setBusyId] = useState(null)
+  const [weekSessions, setWeekSessions] = useState([])
 
   useEffect(() => {
     listPlans()
       .then((data) => setPlans(data.plans))
       .catch((err) => setErrorCode(err.code))
+    listSessions({ from: startOfWeek().toISOString() })
+      .then((data) => setWeekSessions(data.sessions))
+      .catch(() => {})
   }, [])
 
   async function runAction(plan, action) {
@@ -72,7 +78,7 @@ function PlansPage() {
         <>
           {activePlan ? (
             <SectionCard title={t('plans.thisWeek')} description={activePlan.name}>
-              <WeekSchedule workouts={activePlan.workouts} />
+              <WeekSchedule workouts={activePlan.workouts} completedSessions={weekSessions} />
             </SectionCard>
           ) : (
             <p className="plans-page__hint">{t('plans.noActive')}</p>

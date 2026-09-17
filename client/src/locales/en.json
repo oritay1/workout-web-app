@@ -55,7 +55,24 @@
   },
   "home": {
     "greeting": "Hi, {{username}}",
-    "subtitle": "Your workout plans, workouts and diet will appear here."
+    "today": "Today",
+    "noActivePlan": "You don't have an active workout plan.",
+    "goToPlans": "Create or choose a plan",
+    "nothingToday": "Nothing scheduled for today.",
+    "start": "Start",
+    "startNamed": "Start {{name}}",
+    "otherWorkouts": "Other workouts in this plan",
+    "startFree": "Start a free workout",
+    "inProgress": "Workout in progress",
+    "continue": "Continue",
+    "exerciseCount_one": "{{count}} exercise",
+    "exerciseCount_other": "{{count}} exercises",
+    "thisWeek": "This week",
+    "weekProgress_one": "{{done}} of {{count}} workout done",
+    "weekProgress_other": "{{done}} of {{count}} workouts done",
+    "recent": "Recent workouts",
+    "noRecent": "No workouts yet. Start one above!",
+    "allHistory": "All workouts →"
   },
   "errors": {
     "NOT_FOUND": "Not found",
@@ -79,7 +96,11 @@
     "EXERCISE_NOT_FOUND": "This exercise doesn't exist or can't be edited.",
     "EXERCISE_NAME_TAKEN": "You already have an exercise with this name.",
     "PLAN_NOT_FOUND": "This plan doesn't exist.",
-    "PLAN_HAS_ERRORS": "Some fields need fixing before saving."
+    "PLAN_HAS_ERRORS": "Some fields need fixing before saving.",
+    "SESSION_NOT_FOUND": "This workout doesn't exist.",
+    "SESSION_IN_PROGRESS": "You already have a workout in progress.",
+    "SESSION_ALREADY_FINISHED": "This workout is already finished.",
+    "WORKOUT_NOT_FOUND": "This workout is no longer in the plan."
   },
   "tagInput": {
     "add": "Add",
@@ -230,7 +251,8 @@
     "label": "Main navigation",
     "home": "Home",
     "exercises": "Exercises",
-    "plans": "Plans"
+    "plans": "Plans",
+    "history": "History"
   },
   "exercises": {
     "title": "Exercises",
@@ -375,6 +397,68 @@
       "save": "Save plan",
       "unsavedConfirm": "You have unsaved changes. Leave without saving?",
       "workoutLetters": "ABCDEFGHIJKLMN"
-    }
+    },
+    "done": "Done",
+    "unplanned": "unplanned"
+  },
+  "workout": {
+    "freeWorkout": "Free workout",
+    "plan": "Plan",
+    "lastTime": "Last time",
+    "addedDuringWorkout": "Added during workout",
+    "fields": {
+      "reps": "Reps",
+      "weightKg": "Weight",
+      "durationSeconds": "Time",
+      "durationMinutes": "Duration",
+      "distanceKm": "Distance"
+    },
+    "setField": "Set {{number}} {{field}}",
+    "completeSet": "Set {{number}} done",
+    "removeSet": "Remove set {{number}}",
+    "setsDone": "{{done}} of {{total}} sets done",
+    "addSet": "Add set",
+    "removeExercise": "Remove {{name}}",
+    "addExercise": "Add exercise",
+    "noExercises": "No exercises yet. Add the first one.",
+    "notes": "Workout notes",
+    "notesPlaceholder": "How did it feel?",
+    "elapsed": "Time elapsed",
+    "saved": "Saved",
+    "saving": "Saving…",
+    "saveFailed": "Offline – will retry",
+    "rest": "Rest",
+    "restOver": "Rest's over – next set!",
+    "skipRest": "Skip",
+    "finish": "Finish workout",
+    "discard": "Discard",
+    "confirmFinish": "Finish this workout?",
+    "confirmFinishUnfinished_one": "{{count}} set isn't marked as done. Finish anyway?",
+    "confirmFinishUnfinished_other": "{{count}} sets aren't marked as done. Finish anyway?",
+    "confirmDiscard": "Discard this workout? Everything logged in it will be deleted."
+  },
+  "history": {
+    "title": "Workout history",
+    "empty": "No finished workouts yet.",
+    "loadMore": "Load more",
+    "back": "← Workout history",
+    "setsOfPlanned": "{{done}}/{{count}} planned sets",
+    "sets_one": "{{count}} set",
+    "sets_other": "{{count}} sets",
+    "volume": "{{value}} kg lifted",
+    "duration": "Duration",
+    "setsLabel": "Sets",
+    "volumeLabel": "Volume",
+    "plannedVsActual": "Planned vs actual",
+    "planned": "Planned",
+    "actual": "Done",
+    "status": {
+      "done": "Done",
+      "partial": "Partial",
+      "skipped": "Skipped",
+      "extra": "Extra"
+    },
+    "delete": "Delete workout",
+    "confirmDelete": "Delete this workout from your history?"
   }
 }

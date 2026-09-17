@@ -10,7 +10,11 @@ export const ROUTES = {
   plans: '/plans',
   newPlan: '/plans/new',
   editPlan: '/plans/:id',
+  workout: '/workout',
+  history: '/history',
+  sessionDetail: '/history/:id',
 }
 
 export const editExercisePath = (id) => `/exercises/${encodeURIComponent(id)}/edit`
 export const editPlanPath = (id) => `/plans/${encodeURIComponent(id)}`
+export const sessionDetailPath = (id) => `/history/${encodeURIComponent(id)}`

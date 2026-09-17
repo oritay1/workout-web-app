@@ -53,3 +53,28 @@ export async function findSessionUser({ sub, ver }) {
   const user = await User.findById(sub).lean();
   return user && user.tokenVersion === ver ? user : null;
 }
+
+// Checks the current password, stores the new one and invalidates every existing session
+// (the caller issues a fresh session for the device that made the change)
+export async function changePassword(userId, input) {
+  const { currentPassword, newPassword } = input ?? {};
+  if (typeof currentPassword !== 'string' || !currentPassword) {
+    throw new HttpError(400, 'INVALID_CURRENT_PASSWORD', { field: 'currentPassword' });
+  }
+  const user = await User.findById(userId).select('+passwordHash');
+  if (!user) throw new HttpError(401, 'UNAUTHORIZED');
+  if (!(await bcrypt.compare(currentPassword, user.passwordHash))) {
+    throw new HttpError(400, 'INVALID_CURRENT_PASSWORD', { field: 'currentPassword' });
+  }
+  try {
+    parsePassword(newPassword);
+  } catch (err) {
+    throw new HttpError(400, err.code, { field: 'newPassword' });
+  }
+  if (await bcrypt.compare(newPassword, user.passwordHash)) {
+    throw new HttpError(400, 'SAME_PASSWORD', { field: 'newPassword' });
+  }
+  user.passwordHash = await bcrypt.hash(newPassword, BCRYPT_ROUNDS);
+  user.tokenVersion += 1;
+  return user.save();
+}

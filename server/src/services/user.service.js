@@ -1,6 +1,7 @@
-import { User, USERNAME_COLLATION } from '../models/user.model.js';
+import { THEME_PREFERENCES, User, USERNAME_COLLATION } from '../models/user.model.js';
 import { HttpError } from '../middlewares/errorHandler.js';
 import { parseAvatar, parseEmail, parsePhone, parseUsername } from './accountValidation.js';
+import { invalidField, parseEnum } from './validation.js';
 
 // The only user fields ever sent to the client
 export function toPublicUser(user) {
@@ -10,6 +11,7 @@ export function toPublicUser(user) {
     phone: user.phone,
     avatar: user.avatar ?? null,
     onboardingCompleted: Boolean(user.onboardingCompleted),
+    settings: { language: user.settings?.language ?? null, theme: user.settings?.theme ?? null },
     createdAt: user.createdAt,
   };
 }
@@ -61,4 +63,25 @@ export async function updateAccount(userId, input) {
 
 export async function markOnboardingCompleted(userId) {
   return User.findByIdAndUpdate(userId, { onboardingCompleted: true }, { returnDocument: 'after' });
+}
+
+// Language codes are only format-checked, so adding a UI language needs no server change
+const LANGUAGE_PATTERN = /^[a-z]{2,3}(-[A-Za-z]{2,4})?$/;
+
+// Partial update of display preferences
+export async function updateSettings(userId, input) {
+  if (typeof input !== 'object' || input === null) throw invalidField('settings');
+  const set = {};
+  if ('language' in input) {
+    if (typeof input.language !== 'string' || !LANGUAGE_PATTERN.test(input.language)) throw invalidField('language');
+    set['settings.language'] = input.language;
+  }
+  if ('theme' in input) {
+    const theme = parseEnum(input.theme, 'theme', THEME_PREFERENCES);
+    if (!theme) throw invalidField('theme');
+    set['settings.theme'] = theme;
+  }
+  const user = await User.findByIdAndUpdate(userId, { $set: set }, { returnDocument: 'after' });
+  if (!user) throw new HttpError(401, 'UNAUTHORIZED');
+  return user;
 }

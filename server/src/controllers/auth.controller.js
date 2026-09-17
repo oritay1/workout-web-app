@@ -35,3 +35,10 @@ export function logout(req, res) {
 export function me(req, res) {
   res.json({ user: toPublicUser(req.user) });
 }
+
+export async function changePassword(req, res) {
+  const user = await authService.changePassword(req.user._id, req.body);
+  // Other devices are logged out (tokenVersion changed); this one gets a new session
+  startSession(res, user);
+  res.json({ user: toPublicUser(user) });
+}

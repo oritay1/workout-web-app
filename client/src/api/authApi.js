@@ -15,3 +15,8 @@ export function logout() {
 export function getCurrentUser() {
   return request('/auth/me')
 }
+
+// Logs out every other device; this one gets a fresh session
+export function changePassword(currentPassword, newPassword) {
+  return request('/auth/change-password', { method: 'POST', body: JSON.stringify({ currentPassword, newPassword }) })
+}

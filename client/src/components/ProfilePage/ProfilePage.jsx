@@ -5,9 +5,11 @@ import { HEALTH_SECTIONS } from '../../constants/health.js'
 import { useErrorMessage } from '../../hooks/useErrorMessage.js'
 import AccountSection from '../AccountSection/AccountSection.jsx'
 import DataExportSection from '../DataExportSection/DataExportSection.jsx'
+import DisplaySettingsSection from '../DisplaySettingsSection/DisplaySettingsSection.jsx'
 import HealthSection from '../HealthSection/HealthSection.jsx'
 import Loader from '../Loader/Loader.jsx'
 import MeasurementsSection from '../MeasurementsSection/MeasurementsSection.jsx'
+import SecuritySection from '../SecuritySection/SecuritySection.jsx'
 import './ProfilePage.css'
 
 function ProfilePage() {
@@ -45,6 +47,8 @@ function ProfilePage() {
           />
         ))
       )}
+      <DisplaySettingsSection />
+      <SecuritySection />
       <DataExportSection />
     </section>
   )

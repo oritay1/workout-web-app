@@ -65,7 +65,7 @@
 ### Accounts, profile and health data
 
 - **Registration:** username, password, email, phone number (all required), profile picture (optional). Username and email are unique. Picture is resized in the browser before upload (see template conventions).
-- **Auth (differs from the template's admin login):** real user accounts. Passwords hashed with bcryptjs (pure JS, no native build). Login issues a JWT valid for **60 days**, stored in an `httpOnly`, `Secure`, `SameSite=Lax` cookie (same origin), so a user who closes the browser and returns is still logged in. Logout clears the cookie. Rate-limit login and registration. Every API route except register/login/health requires auth, and every query is scoped to the logged-in user.
+- **Auth (differs from the template's admin login):** real user accounts. Passwords hashed with bcryptjs (pure JS, no native build). Login issues a JWT valid for **60 days**, stored in an `httpOnly`, `Secure`, `SameSite=Lax` cookie (same origin), so a user who closes the browser and returns is still logged in. Logout clears the cookie. Rate-limit login and registration. Password change (`POST /api/auth/change-password`) requires the current password, increments `tokenVersion` (logging out every other device) and issues a fresh cookie for the current one. Every API route except register/login/health requires auth, and every query is scoped to the logged-in user.
 - **Onboarding:** right after registration, the user is sent to a health-details screen that can be skipped; the same details are editable later in the profile.
 - **Profile:** account details (username, email, phone, picture) plus health details. Store date of birth (not age — compute age). Measurements that change over time are stored as dated entries (history), not a single overwritten value.
 - **Health details (all optional):**
@@ -80,6 +80,7 @@
 ### Display settings
 
 - Light / dark mode, toggleable at any time from a button in the header and from display settings. Default follows the system. Implemented with CSS variables under `[data-theme]` on `<html>`; the choice is saved to the user's settings (and to localStorage so it applies before login / without flicker).
+- Implementation: `user.settings = { language, theme: 'light' | 'dark' | 'system' }` (`PATCH /api/me/settings`; language codes are only format-checked, so adding a UI language needs no server change). Changes go through `usePreferences()` (applies locally + saves to the account when logged in). `PreferencesSync` applies the account's settings once per login; if the account has none yet (new registration), it saves the device's current choices. Unknown language codes from the account are ignored.
 - Language setting in the same place.
 
 ### i18n

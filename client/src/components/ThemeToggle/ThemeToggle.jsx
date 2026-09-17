@@ -1,32 +1,35 @@
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { applyTheme, getCurrentTheme, onSystemThemeChange, saveTheme } from '../../utils/theme.js'
+import { usePreferences } from '../../hooks/usePreferences.js'
+import { getCurrentTheme, onSystemThemeChange, onThemePreferenceChange } from '../../utils/theme.js'
 import './ThemeToggle.css'
 
 function ThemeToggle() {
   const { t } = useTranslation()
+  const { setThemePreference } = usePreferences()
+  // The theme actually shown (a 'system' preference resolves to light or dark)
   const [theme, setTheme] = useState(getCurrentTheme)
 
-  useEffect(
-    () =>
-      onSystemThemeChange((systemTheme) => {
-        applyTheme(systemTheme)
-        setTheme(systemTheme)
-      }),
-    [],
-  )
+  useEffect(() => {
+    const stopSystem = onSystemThemeChange(setTheme)
+    const stopPreference = onThemePreferenceChange(() => setTheme(getCurrentTheme()))
+    return () => {
+      stopSystem()
+      stopPreference()
+    }
+  }, [])
 
   const isDark = theme === 'dark'
   const label = isDark ? t('header.switchToLight') : t('header.switchToDark')
 
-  function toggle() {
-    const next = isDark ? 'light' : 'dark'
-    saveTheme(next)
-    setTheme(next)
-  }
-
   return (
-    <button type="button" className="theme-toggle" onClick={toggle} aria-label={label} title={label}>
+    <button
+      type="button"
+      className="theme-toggle"
+      onClick={() => setThemePreference(isDark ? 'light' : 'dark')}
+      aria-label={label}
+      title={label}
+    >
       {isDark ? (
         <svg className="theme-toggle__icon" viewBox="0 0 24 24" aria-hidden="true">
           <circle cx="12" cy="12" r="4.5" />

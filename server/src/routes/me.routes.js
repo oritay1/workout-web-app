@@ -7,6 +7,7 @@ const router = Router();
 
 router.use(requireAuth);
 router.patch('/', meController.updateMe);
+router.patch('/settings', meController.updateMySettings);
 router.post('/onboarding', meController.onboarding);
 router.get('/health', meController.getHealth);
 router.patch('/health', meController.updateHealth);

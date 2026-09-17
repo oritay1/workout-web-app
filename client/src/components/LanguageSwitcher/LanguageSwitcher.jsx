@@ -1,15 +1,17 @@
 import { useTranslation } from 'react-i18next'
+import { usePreferences } from '../../hooks/usePreferences.js'
 import { LANGUAGES } from '../../i18n/languages.js'
 import './LanguageSwitcher.css'
 
 function LanguageSwitcher() {
-  const { t, i18n } = useTranslation()
+  const { t } = useTranslation()
+  const { language, setLanguage } = usePreferences()
 
   return (
     <select
       className="language-switcher"
-      value={i18n.resolvedLanguage}
-      onChange={(event) => i18n.changeLanguage(event.target.value)}
+      value={language}
+      onChange={(event) => setLanguage(event.target.value)}
       aria-label={t('header.language')}
     >
       {LANGUAGES.map(({ code, name }) => (

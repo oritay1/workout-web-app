@@ -2,10 +2,15 @@ import * as healthProfileService from '../services/healthProfile.service.js';
 import * as measurementService from '../services/measurement.service.js';
 import { completeOnboarding } from '../services/onboarding.service.js';
 import { buildUserContext, parseExportOptions } from '../services/userContext.service.js';
-import { toPublicUser, updateAccount } from '../services/user.service.js';
+import { toPublicUser, updateAccount, updateSettings } from '../services/user.service.js';
 
 export async function updateMe(req, res) {
   const user = await updateAccount(req.user._id, req.body ?? {});
+  res.json({ user: toPublicUser(user) });
+}
+
+export async function updateMySettings(req, res) {
+  const user = await updateSettings(req.user._id, req.body);
   res.json({ user: toPublicUser(user) });
 }
 

@@ -7,7 +7,10 @@
     "optional": "(לא חובה)",
     "save": "שמירה",
     "saving": "שומר…",
-    "saved": "נשמר"
+    "saved": "נשמר",
+    "edit": "עריכה",
+    "delete": "מחיקה",
+    "cancel": "ביטול"
   },
   "header": {
     "language": "שפה",
@@ -71,7 +74,9 @@
     "INVALID_PASSWORD": "הסיסמה צריכה להכיל לפחות 8 תווים.",
     "INVALID_AVATAR": "אי אפשר להשתמש בתמונה הזו. נסו תמונה אחרת.",
     "INVALID_FIELD": "ערך לא תקין",
-    "MEASUREMENT_NOT_FOUND": "הרשומה הזו כבר לא קיימת."
+    "MEASUREMENT_NOT_FOUND": "הרשומה הזו כבר לא קיימת.",
+    "EXERCISE_NOT_FOUND": "התרגיל לא קיים או שאי אפשר לערוך אותו.",
+    "EXERCISE_NAME_TAKEN": "כבר יש לכם תרגיל בשם הזה."
   },
   "tagInput": {
     "add": "הוספה",
@@ -214,5 +219,87 @@
     "bpm": "פעימות לדקה",
     "mmHg": "מ״מ כספית",
     "hours": "שעות"
+  },
+  "nav": {
+    "label": "ניווט ראשי",
+    "home": "בית",
+    "exercises": "תרגילים"
+  },
+  "exercises": {
+    "title": "תרגילים",
+    "new": "תרגיל חדש",
+    "search": "חיפוש",
+    "searchPlaceholder": "למשל סקוואט",
+    "filters": {
+      "muscle": "שריר",
+      "equipment": "ציוד",
+      "type": "סוג",
+      "source": "מקור",
+      "all": "הכול",
+      "builtIn": "מובנים",
+      "custom": "התרגילים שלי",
+      "clear": "ניקוי סינון"
+    },
+    "count_one": "תרגיל אחד",
+    "count_two": "שני תרגילים",
+    "count_other": "{{count}} תרגילים",
+    "empty": "לא נמצאו תרגילים מתאימים.",
+    "customBadge": "אישי",
+    "editNamed": "עריכת {{name}}",
+    "deleteNamed": "מחיקת {{name}}",
+    "confirmDelete": "למחוק את \"{{name}}\"? אי אפשר לבטל את זה.",
+    "backToLibrary": "→ ספריית התרגילים",
+    "form": {
+      "newTitle": "תרגיל חדש",
+      "editTitle": "עריכת תרגיל",
+      "name": "שם",
+      "namePlaceholder": "למשל פאדל",
+      "nameRequired": "הזינו שם.",
+      "type": "סוג",
+      "equipment": "ציוד",
+      "primaryMuscles": "שרירים עיקריים",
+      "secondaryMuscles": "שרירים משניים",
+      "notes": "הערות",
+      "notesPlaceholder": "דגשים לביצוע, הגדרות מכונה, קישורים…"
+    },
+    "types": {
+      "strength": "כוח (משקולות)",
+      "bodyweight": "משקל גוף",
+      "cardio": "אירובי",
+      "duration": "לפי זמן"
+    },
+    "typeHints": {
+      "strength": "נמדד בסטים × חזרות × משקל.",
+      "bodyweight": "נמדד בסטים × חזרות.",
+      "cardio": "נמדד במרחק ובזמן.",
+      "duration": "נמדד בזמן."
+    },
+    "equipment": {
+      "none": "ללא ציוד",
+      "barbell": "מוט",
+      "dumbbell": "משקולות יד",
+      "kettlebell": "קטלבל",
+      "machine": "מכונה",
+      "cable": "כבלים",
+      "band": "גומייה",
+      "pullUpBar": "מתח",
+      "dipBars": "מקבילים",
+      "cardioMachine": "מכשיר אירובי",
+      "other": "אחר"
+    },
+    "muscles": {
+      "chest": "חזה",
+      "back": "גב",
+      "shoulders": "כתפיים",
+      "biceps": "יד קדמית",
+      "triceps": "יד אחורית",
+      "forearms": "אמות",
+      "core": "בטן וליבה",
+      "glutes": "ישבן",
+      "quads": "ירך קדמית",
+      "hamstrings": "ירך אחורית",
+      "calves": "שוקיים",
+      "fullBody": "כל הגוף"
+    }
   }
 }

@@ -18,6 +18,8 @@
 - A plan defines how many workouts per week and the workouts themselves (e.g. "Push", "Pull", "Legs"), each with ordered exercises and planned sets/reps/weight/rest.
 - Optional schedule: which days of the week each workout happens, and optionally at what time.
 - Built-in exercise names must be translatable (store translation keys or per-language names, not a single English string).
+- Implementation: one `Exercise` collection. Built-in entries have `owner: null`, a stable `key` and `names: { en, he }`; they live in `server/src/data/builtInExercises.js` and are upserted on every server start (edit that file to add/fix exercises). Custom entries have `owner` and a single `name` (unique per user, case-insensitive). Built-in exercises are read-only. The client loads the whole library once and searches/filters locally (search matches names in every language).
+- Custom exercises are currently hard-deleted. Once workout plans/sessions reference exercises (stages 5-6), deleting must not break history — switch to archiving or block deletion of exercises in use.
 
 **B. Planned vs. actual tracking**
 - A workout session can be started from a planned workout (or as a free session) and tracked in real time: add/remove exercises during the session, log each set (reps, weight / distance, time), mark sets done, rest timer.

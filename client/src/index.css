@@ -34,6 +34,7 @@
 :root {
   --radius: 12px;
   --header-height: 56px;
+  --bottom-nav-height: 60px;
 
   font-family: 'Rubik', system-ui, sans-serif;
   line-height: 1.5;
@@ -58,4 +59,53 @@ select,
 textarea {
   font: inherit;
   color: inherit;
+}
+
+/* Shared buttons */
+.button {
+  min-height: 44px;
+  padding: 0 20px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 1rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+  cursor: pointer;
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+.button--primary {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.button--primary:hover:not(:disabled) {
+  background: var(--color-primary-hover);
+}
+
+.button--secondary {
+  border-color: var(--color-border);
+  background: transparent;
+}
+
+.button--secondary:hover:not(:disabled) {
+  background: var(--color-bg);
+}
+
+.button--danger {
+  border-color: var(--color-border);
+  background: transparent;
+  color: var(--color-danger);
+}
+
+.button--danger:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--color-danger) 10%, transparent);
 }

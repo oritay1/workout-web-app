@@ -72,7 +72,9 @@
     "weekProgress_other": "{{done}} of {{count}} workouts done",
     "recent": "Recent workouts",
     "noRecent": "No workouts yet. Start one above!",
-    "allHistory": "All workouts →"
+    "allHistory": "All workouts →",
+    "nutritionToday": "Nutrition today",
+    "openNutrition": "Open food log →"
   },
   "errors": {
     "NOT_FOUND": "Not found",
@@ -103,7 +105,11 @@
     "WORKOUT_NOT_FOUND": "This workout is no longer in the plan.",
     "FOOD_NOT_FOUND": "This food doesn't exist or can't be edited.",
     "FOOD_NAME_TAKEN": "You already have a food with this name.",
-    "MACROS_EXCEED_100": "Protein, carbs and fat can't add up to more than 100 per 100."
+    "MACROS_EXCEED_100": "Protein, carbs and fat can't add up to more than 100 per 100.",
+    "DIET_PLAN_NOT_FOUND": "This diet plan doesn't exist.",
+    "ENTRY_NOT_FOUND": "This entry no longer exists.",
+    "MEAL_NOT_FOUND": "This meal is no longer in your active plan.",
+    "DAY_FULL": "Too many entries for one day."
   },
   "tagInput": {
     "add": "Add",
@@ -570,5 +576,88 @@
       "addPortion": "Add portion",
       "removePortion": "Remove portion {{number}}"
     }
+  },
+  "nutrition": {
+    "today": "Today",
+    "backToToday": "Back to today",
+    "previousDay": "Previous day",
+    "nextDay": "Next day",
+    "back": "← Nutrition",
+    "dietPlans": "Diet plans",
+    "summary": "Daily summary",
+    "planGoals": "Goals from \"{{name}}\"",
+    "noPlanGoals": "No active diet plan",
+    "createPlanHint": "Create a diet plan to set daily goals →",
+    "planChanged": "Your active plan (\"{{name}}\") changed.",
+    "updateGoals": "Update today's goals",
+    "water": "Water",
+    "waterDrunk": "Drunk",
+    "addWater": "Add {{amount}} ml of water",
+    "removeWater": "Remove {{amount}} ml of water",
+    "meals": {
+      "breakfast": "Breakfast",
+      "lunch": "Lunch",
+      "dinner": "Dinner",
+      "snacks": "Snacks"
+    },
+    "meal": "Meal",
+    "fromPlan": "From your plan",
+    "addAllFromPlan": "Add all",
+    "addNamed": "Add {{name}}",
+    "addFoodTo": "Add food to {{meal}}",
+    "addToLog": "Add to log",
+    "editEntry": "Edit {{name}}",
+    "deleteEntry": "Delete {{name}}",
+    "picker": {
+      "chooseFood": "Choose a food",
+      "howMuch": "How much?",
+      "back": "Back to search"
+    }
+  },
+  "dietPlans": {
+    "title": "Diet plans",
+    "new": "New plan",
+    "back": "← Diet plans",
+    "intro": "Set daily goals, plan meals, or both. The active plan is what your daily log is compared with.",
+    "empty": "No diet plans yet.",
+    "noTargets": "no goals set",
+    "targetsLabel": "Goals",
+    "mealsSummary_one": "{{count}} meal · {{kcal}} kcal planned",
+    "mealsSummary_other": "{{count}} meals · {{kcal}} kcal planned",
+    "newTitle": "New diet plan",
+    "editTitle": "Edit diet plan",
+    "namePlaceholder": "e.g. Cutting – 2000 kcal",
+    "targets": "Daily goals",
+    "targetsHint": "All optional. Leave empty what you don't want to track.",
+    "targetFields": {
+      "energyKcal": "Calories",
+      "proteinG": "Protein",
+      "carbsG": "Carbs",
+      "fatG": "Fat",
+      "waterMl": "Water"
+    },
+    "suggest": "Calculate from my profile",
+    "suggestion": "Suggested: {{kcal}} kcal · protein {{protein}} g · carbs {{carbs}} g · fat {{fat}} g · water {{water}} ml",
+    "suggestionNote": "An estimate (Mifflin-St Jeor formula, your activity level and goal). Adjust it to how your body responds.",
+    "useSuggestion": "Use these goals",
+    "suggestionMissing": "To calculate, add to your profile: {{fields}}.",
+    "goToProfile": "Go to profile",
+    "profileFields": {
+      "sex": "sex",
+      "dateOfBirth": "date of birth",
+      "heightCm": "height",
+      "weight": "current weight"
+    },
+    "meals": "Meals",
+    "mealsHint": "Optional: foods you plan to eat. They show up in your daily log so you can add them with one tap.",
+    "mealNumber": "Meal {{number}}",
+    "mealName": "Meal name",
+    "mealTime": "Time",
+    "removeMeal": "Remove {{name}}",
+    "addFood": "Add food",
+    "addMeal": "Add meal",
+    "addToMeal": "Add to meal",
+    "planTotals": "Planned foods vs goals",
+    "planTotalsHint": "Totals of all the foods in this plan."
   }
 }

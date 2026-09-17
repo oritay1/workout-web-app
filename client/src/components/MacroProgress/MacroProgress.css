@@ -1,0 +1,49 @@
+.macro-progress {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.macro-progress__text {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 0.9rem;
+}
+
+.macro-progress__label {
+  color: var(--color-text-muted);
+}
+
+.macro-progress__value {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.macro-progress--large .macro-progress__text {
+  font-size: 1.05rem;
+}
+
+.macro-progress__bar {
+  height: 6px;
+  overflow: hidden;
+  border-radius: 3px;
+  background: var(--color-bg);
+}
+
+.macro-progress--large .macro-progress__bar {
+  height: 10px;
+  border-radius: 5px;
+}
+
+.macro-progress__bar span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--color-primary);
+}
+
+.macro-progress__bar--over span {
+  background: var(--color-warning);
+}

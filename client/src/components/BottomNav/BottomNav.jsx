@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next'
-import { NavLink } from 'react-router'
+import { NavLink, useLocation } from 'react-router'
 import { ROUTES } from '../../constants/routes.js'
 import './BottomNav.css'
 
@@ -36,8 +36,9 @@ const ITEMS = [
     icon: <path d="M6.5 6.5v11M17.5 6.5v11M3 9.5v5M21 9.5v5M6.5 12h11" />,
   },
   {
-    to: ROUTES.foods,
+    to: ROUTES.nutrition,
     labelKey: 'nav.nutrition',
+    activeFor: [ROUTES.foods],
     icon: (
       <>
         <path d="M12 7c-2-2.5-7-2-7 3.5C5 16 9 21 12 21s7-5 7-10.5C19 5 14 4.5 12 7z" />
@@ -50,6 +51,7 @@ const ITEMS = [
 // Main navigation for logged-in users, fixed to the bottom of the screen (thumb-friendly on phones)
 function BottomNav() {
   const { t } = useTranslation()
+  const { pathname } = useLocation()
 
   return (
     <>
@@ -57,7 +59,14 @@ function BottomNav() {
       <div className="bottom-nav__spacer" aria-hidden="true" />
       <nav className="bottom-nav" aria-label={t('nav.label')}>
         {ITEMS.map((item) => (
-          <NavLink key={item.to} to={item.to} end={item.end} className="bottom-nav__link">
+          <NavLink
+            key={item.to}
+            to={item.to}
+            end={item.end}
+            className={({ isActive }) =>
+              `bottom-nav__link${isActive || item.activeFor?.some((path) => pathname.startsWith(path)) ? ' active' : ''}`
+            }
+          >
             <svg className="bottom-nav__icon" viewBox="0 0 24 24" aria-hidden="true">
               {item.icon}
             </svg>

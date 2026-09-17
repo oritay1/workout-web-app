@@ -1,0 +1,45 @@
+/* Plan cards reuse the workout PlanCard styles (.plan-card) */
+@import '../PlanCard/PlanCard.css';
+
+.diet-plans {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 720px;
+  margin-inline: auto;
+  padding: 16px 16px 32px;
+}
+
+.diet-plans__back {
+  align-self: flex-start;
+  padding-block: 8px;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.diet-plans__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.diet-plans__title {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.diet-plans__intro,
+.diet-plans__empty {
+  margin: 0;
+  color: var(--color-text-muted);
+}
+
+.diet-plans__list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

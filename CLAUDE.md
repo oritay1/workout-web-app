@@ -34,6 +34,11 @@
 - Foods come from a built-in food library or custom foods saved to the user. Nutrition values are stored per 100 g or per 100 ml (liquids), with calories, protein, carbs, fat, and optional fiber/sugar/sodium.
 - Daily log: the user adds or removes what they actually ate/drank each day (from the plan or anything else) and sees progress against the active plan's goals, including water intake.
 - The user can edit the plan itself and the daily log at any time.
+- Implementation:
+  - `DietPlan`: optional `targets` (kcal, protein, carbs, fat, water) + optional `meals[]` with food items (`quantity` + optional `portionLabel`, server computes `amount` in g/ml). One active plan per user (first plan is activated automatically). The editor can suggest targets from the health profile (Mifflin-St Jeor × activity level, adjusted by goal; protein per kg by goal; 25% fat; water 35 ml/kg) — client-side in `client/src/utils/diet.js`.
+  - `DailyLog`: one document per user per local date string (`YYYY-MM-DD`, sent by the client). Entries copy the scaled nutrients at logging time. The day copies the active plan's targets on its first write; if the active plan later changes, the day view offers "update today's goals" (a day logged while no plan was active just follows the active plan). Entries added from the plan keep `planItem`, so planned-but-not-eaten items are shown per meal with one-tap add / "add all".
+  - Meals in the log are the active plan's meal names, or the default keys breakfast/lunch/dinner/snacks (translated in the UI).
+  - All `/api/diet/days/:date/*` endpoints return the full updated day.
 - Built-in food library source: **USDA FoodData Central** (Foundation Foods + SR Legacy). Chosen over Open Food Facts because the values are lab-measured and curated, not crowd-sourced, and the data is public domain (CC0). Branded/packaged products (Open Food Facts) can be added later as a second source if needed.
 - Food library implementation:
   - `server/scripts/build-usda-foods.js` turns the USDA bulk JSON downloads into `server/src/data/usdaFoods.json.gz` (committed, ~0.4 MB, ~7,600 foods). It keeps energy, macros and 8 micronutrients per 100 g plus household portions, and skips baby foods, Alaska Native foods and foods without energy/macros. Re-run it only when updating to a newer USDA release (instructions at the top of the script).

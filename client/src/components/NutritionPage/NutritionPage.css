@@ -1,0 +1,203 @@
+.nutrition-page {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 720px;
+  margin-inline: auto;
+  padding: 16px 16px 32px;
+}
+
+.nutrition-page__links {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  font-size: 0.9rem;
+}
+
+.nutrition-page__links a,
+.nutrition-page__hint a {
+  color: var(--color-primary);
+}
+
+.nutrition-page__day {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.nutrition-page__date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.nutrition-page__date h1 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.nutrition-page__date span {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.nutrition-page__today {
+  border: none;
+  background: none;
+  color: var(--color-primary);
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.nutrition-page__notice {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 12px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--color-warning) 12%, transparent);
+  font-size: 0.9rem;
+}
+
+.nutrition-page__notice .button {
+  min-height: 36px;
+  font-size: 0.85rem;
+}
+
+.nutrition-page__macros {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nutrition-page__hint {
+  margin: 12px 0 0;
+  font-size: 0.9rem;
+}
+
+.nutrition-page__water {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.nutrition-page__water .button {
+  flex: 1;
+  min-height: 40px;
+  padding: 0 8px;
+  font-size: 0.9rem;
+}
+
+.nutrition-meal {
+  padding: 14px 16px;
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+
+.nutrition-meal__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.nutrition-meal__title {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.nutrition-meal__time {
+  margin-inline-start: 8px;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--color-text-muted);
+}
+
+.nutrition-meal__kcal {
+  font-weight: 500;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.nutrition-meal__entries {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nutrition-meal__plan {
+  margin-top: 8px;
+  padding: 8px 10px;
+  border: 1px dashed var(--color-border);
+  border-radius: 10px;
+}
+
+.nutrition-meal__plan-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.nutrition-meal__link {
+  border: none;
+  background: none;
+  color: var(--color-primary);
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.nutrition-meal__plan-items {
+  margin: 4px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nutrition-meal__plan-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding-block: 4px;
+}
+
+.nutrition-meal__plan-name {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  color: var(--color-text-muted);
+}
+
+.nutrition-meal__plan-serving {
+  font-size: 0.8rem;
+}
+
+.nutrition-meal__plan-add {
+  flex-shrink: 0;
+  min-height: 36px;
+  width: 44px;
+  padding: 0;
+  font-size: 1.2rem;
+}
+
+.nutrition-meal__add {
+  width: 100%;
+  margin-top: 8px;
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  background: var(--color-bg);
+  color: var(--color-primary);
+  font-weight: 500;
+  cursor: pointer;
+}

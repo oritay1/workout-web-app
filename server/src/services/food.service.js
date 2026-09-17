@@ -153,6 +153,19 @@ export async function getFood(userId, id) {
   return toPublicFood(food);
 }
 
+// Foods a diet plan or log may use: USDA or the user's own. Archived ones are allowed only when listed in
+// `allowArchivedIds` (foods already used before they were deleted). Returns Map<id, lean food>
+export async function findUsableFoods(userId, ids, allowArchivedIds = []) {
+  const validIds = ids.filter((id) => mongoose.isValidObjectId(id));
+  const foods = await Food.find({ _id: { $in: validIds }, owner: { $in: [null, userId] } }).lean();
+  const allowed = new Set(allowArchivedIds.map(String));
+  return new Map(
+    foods
+      .filter((food) => !food.isArchived || allowed.has(food._id.toString()))
+      .map((food) => [food._id.toString(), food]),
+  );
+}
+
 // ---------- Custom foods ----------
 
 function parseNutrients(input, partial) {

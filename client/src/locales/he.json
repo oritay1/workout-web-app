@@ -74,7 +74,9 @@
     "weekProgress_other": "{{done}} מתוך {{count}} אימונים בוצעו",
     "recent": "אימונים אחרונים",
     "noRecent": "עדיין אין אימונים. התחילו אחד למעלה!",
-    "allHistory": "← כל האימונים"
+    "allHistory": "← כל האימונים",
+    "nutritionToday": "תזונה היום",
+    "openNutrition": "← ליומן התזונה"
   },
   "errors": {
     "NOT_FOUND": "לא נמצא",
@@ -105,7 +107,11 @@
     "WORKOUT_NOT_FOUND": "האימון הזה כבר לא נמצא בתוכנית.",
     "FOOD_NOT_FOUND": "המזון הזה לא קיים או שאי אפשר לערוך אותו.",
     "FOOD_NAME_TAKEN": "כבר יש לכם מזון בשם הזה.",
-    "MACROS_EXCEED_100": "חלבון, פחמימות ושומן לא יכולים להסתכם ביותר מ-100 ל-100."
+    "MACROS_EXCEED_100": "חלבון, פחמימות ושומן לא יכולים להסתכם ביותר מ-100 ל-100.",
+    "DIET_PLAN_NOT_FOUND": "תוכנית התזונה הזו לא קיימת.",
+    "ENTRY_NOT_FOUND": "הרשומה הזו כבר לא קיימת.",
+    "MEAL_NOT_FOUND": "הארוחה הזו כבר לא נמצאת בתוכנית הפעילה.",
+    "DAY_FULL": "יותר מדי רשומות ליום אחד."
   },
   "tagInput": {
     "add": "הוספה",
@@ -578,5 +584,89 @@
       "addPortion": "הוספת מנה",
       "removePortion": "הסרת מנה {{number}}"
     }
+  },
+  "nutrition": {
+    "today": "היום",
+    "backToToday": "חזרה להיום",
+    "previousDay": "יום קודם",
+    "nextDay": "יום הבא",
+    "back": "→ תזונה",
+    "dietPlans": "תוכניות תזונה",
+    "summary": "סיכום יומי",
+    "planGoals": "יעדים מ\"{{name}}\"",
+    "noPlanGoals": "אין תוכנית תזונה פעילה",
+    "createPlanHint": "צרו תוכנית תזונה כדי להגדיר יעדים יומיים ←",
+    "planChanged": "התוכנית הפעילה (\"{{name}}\") השתנתה.",
+    "updateGoals": "עדכון היעדים של היום",
+    "water": "מים",
+    "waterDrunk": "שתיתם",
+    "addWater": "הוספת {{amount}} מ״ל מים",
+    "removeWater": "הורדת {{amount}} מ״ל מים",
+    "meals": {
+      "breakfast": "ארוחת בוקר",
+      "lunch": "ארוחת צהריים",
+      "dinner": "ארוחת ערב",
+      "snacks": "נשנושים"
+    },
+    "meal": "ארוחה",
+    "fromPlan": "מהתוכנית שלכם",
+    "addAllFromPlan": "הוספת הכול",
+    "addNamed": "הוספת {{name}}",
+    "addFoodTo": "הוספת מזון ל{{meal}}",
+    "addToLog": "הוספה ליומן",
+    "editEntry": "עריכת {{name}}",
+    "deleteEntry": "מחיקת {{name}}",
+    "picker": {
+      "chooseFood": "בחירת מזון",
+      "howMuch": "כמה?",
+      "back": "חזרה לחיפוש"
+    }
+  },
+  "dietPlans": {
+    "title": "תוכניות תזונה",
+    "new": "תוכנית חדשה",
+    "back": "→ תוכניות תזונה",
+    "intro": "הגדירו יעדים יומיים, תכננו ארוחות, או את שניהם. היומן היומי שלכם מושווה לתוכנית הפעילה.",
+    "empty": "עדיין אין תוכניות תזונה.",
+    "noTargets": "לא הוגדרו יעדים",
+    "targetsLabel": "יעדים",
+    "mealsSummary_one": "ארוחה אחת · {{kcal}} קק״ל מתוכננות",
+    "mealsSummary_two": "שתי ארוחות · {{kcal}} קק״ל מתוכננות",
+    "mealsSummary_other": "{{count}} ארוחות · {{kcal}} קק״ל מתוכננות",
+    "newTitle": "תוכנית תזונה חדשה",
+    "editTitle": "עריכת תוכנית תזונה",
+    "namePlaceholder": "למשל חיטוב – 2000 קק״ל",
+    "targets": "יעדים יומיים",
+    "targetsHint": "הכול לא חובה. השאירו ריק את מה שלא תרצו לעקוב אחריו.",
+    "targetFields": {
+      "energyKcal": "קלוריות",
+      "proteinG": "חלבון",
+      "carbsG": "פחמימות",
+      "fatG": "שומן",
+      "waterMl": "מים"
+    },
+    "suggest": "חישוב לפי הפרופיל שלי",
+    "suggestion": "הצעה: {{kcal}} קק״ל · חלבון {{protein}} ג׳ · פחמימות {{carbs}} ג׳ · שומן {{fat}} ג׳ · מים {{water}} מ״ל",
+    "suggestionNote": "הערכה בלבד (נוסחת Mifflin-St Jeor, רמת הפעילות והמטרה שלכם). התאימו לפי התגובה של הגוף.",
+    "useSuggestion": "שימוש ביעדים האלה",
+    "suggestionMissing": "כדי לחשב, הוסיפו לפרופיל: {{fields}}.",
+    "goToProfile": "לפרופיל",
+    "profileFields": {
+      "sex": "מין",
+      "dateOfBirth": "תאריך לידה",
+      "heightCm": "גובה",
+      "weight": "משקל נוכחי"
+    },
+    "meals": "ארוחות",
+    "mealsHint": "לא חובה: מזונות שאתם מתכננים לאכול. הם יופיעו ביומן היומי כדי שתוכלו להוסיף אותם בלחיצה.",
+    "mealNumber": "ארוחה {{number}}",
+    "mealName": "שם הארוחה",
+    "mealTime": "שעה",
+    "removeMeal": "הסרת {{name}}",
+    "addFood": "הוספת מזון",
+    "addMeal": "הוספת ארוחה",
+    "addToMeal": "הוספה לארוחה",
+    "planTotals": "המזונות המתוכננים מול היעדים",
+    "planTotalsHint": "סך כל המזונות בתוכנית."
   }
 }

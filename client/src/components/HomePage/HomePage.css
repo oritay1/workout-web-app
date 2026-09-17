@@ -124,3 +124,10 @@
   display: inline-block;
   padding-block: 4px;
 }
+
+.home-page__nutrition {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 10px;
+}

@@ -1,0 +1,52 @@
+.day-entry {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-block: 6px;
+}
+
+.day-entry + .day-entry {
+  border-block-start: 1px solid var(--color-border);
+}
+
+.day-entry__main {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  padding: 2px 0;
+  border: none;
+  background: none;
+  text-align: start;
+  cursor: pointer;
+}
+
+.day-entry__name {
+  width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.day-entry__serving {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.day-entry__kcal {
+  flex-shrink: 0;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+.day-entry__kcal span {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--color-text-muted);
+}
+
+.day-entry__delete {
+  flex-shrink: 0;
+  border-color: transparent;
+  background: none;
+  color: var(--color-text-muted);
+}

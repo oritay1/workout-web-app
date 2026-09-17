@@ -25,6 +25,12 @@ export function parseNumber(value, field, { min, max }) {
   return value;
 }
 
+export function parseInteger(value, field, range) {
+  const number = parseNumber(value, field, range);
+  if (number !== null && !Number.isInteger(number)) throw invalidField(field);
+  return number;
+}
+
 export function parseText(value, field, maxLength) {
   if (isBlank(value)) return null;
   if (typeof value !== 'string' || value.trim().length > maxLength) throw invalidField(field);

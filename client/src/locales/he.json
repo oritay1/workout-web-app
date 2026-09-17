@@ -10,7 +10,8 @@
     "saved": "נשמר",
     "edit": "עריכה",
     "delete": "מחיקה",
-    "cancel": "ביטול"
+    "cancel": "ביטול",
+    "close": "סגירה"
   },
   "header": {
     "language": "שפה",
@@ -76,7 +77,9 @@
     "INVALID_FIELD": "ערך לא תקין",
     "MEASUREMENT_NOT_FOUND": "הרשומה הזו כבר לא קיימת.",
     "EXERCISE_NOT_FOUND": "התרגיל לא קיים או שאי אפשר לערוך אותו.",
-    "EXERCISE_NAME_TAKEN": "כבר יש לכם תרגיל בשם הזה."
+    "EXERCISE_NAME_TAKEN": "כבר יש לכם תרגיל בשם הזה.",
+    "PLAN_NOT_FOUND": "התוכנית הזו לא קיימת.",
+    "PLAN_HAS_ERRORS": "יש שדות שצריך לתקן לפני השמירה."
   },
   "tagInput": {
     "add": "הוספה",
@@ -218,12 +221,16 @@
     "percent": "%",
     "bpm": "פעימות לדקה",
     "mmHg": "מ״מ כספית",
-    "hours": "שעות"
+    "hours": "שעות",
+    "seconds": "שנ׳",
+    "minutes": "דק׳",
+    "km": "ק״מ"
   },
   "nav": {
     "label": "ניווט ראשי",
     "home": "בית",
-    "exercises": "תרגילים"
+    "exercises": "תרגילים",
+    "plans": "תוכניות"
   },
   "exercises": {
     "title": "תרגילים",
@@ -300,6 +307,78 @@
       "hamstrings": "ירך אחורית",
       "calves": "שוקיים",
       "fullBody": "כל הגוף"
+    }
+  },
+  "plans": {
+    "title": "תוכניות אימון",
+    "new": "תוכנית חדשה",
+    "empty": "עדיין אין לכם תוכניות אימון.",
+    "createFirst": "ליצירת התוכנית הראשונה",
+    "thisWeek": "השבוע",
+    "noActive": "אין תוכנית פעילה. בחרו אחת למטה עם \"הגדרה כפעילה\".",
+    "activeBadge": "פעילה",
+    "setActive": "הגדרה כפעילה",
+    "perWeek_one": "אימון אחד בשבוע",
+    "perWeek_two": "{{count}} אימונים בשבוע",
+    "perWeek_other": "{{count}} אימונים בשבוע",
+    "workoutCount_one": "אימון אחד",
+    "workoutCount_two": "שני אימונים",
+    "workoutCount_other": "{{count}} אימונים",
+    "editNamed": "עריכת {{name}}",
+    "deleteNamed": "מחיקת {{name}}",
+    "confirmDelete": "למחוק את התוכנית \"{{name}}\"? אי אפשר לבטל את זה.",
+    "backToPlans": "→ תוכניות אימון",
+    "restDay": "מנוחה",
+    "today": "היום",
+    "untitledWorkout": "אימון ללא שם",
+    "editor": {
+      "newTitle": "תוכנית אימון חדשה",
+      "editTitle": "עריכת תוכנית אימון",
+      "details": "פרטי התוכנית",
+      "name": "שם התוכנית",
+      "namePlaceholder": "למשל דחיפה / משיכה / רגליים",
+      "workoutsPerWeek": "אימונים בשבוע",
+      "notes": "הערות",
+      "notesPlaceholder": "המטרה של התוכנית, לכמה זמן היא מתוכננת…",
+      "workouts": "אימונים",
+      "defaultWorkoutName": "אימון {{letter}}",
+      "workoutNumber": "אימון {{number}}",
+      "workoutName": "שם האימון",
+      "workoutNamePlaceholder": "למשל יום דחיפה",
+      "days": "ימים",
+      "timeFor": "שעה ביום {{day}} (לא חובה)",
+      "exercises": "תרגילים",
+      "noExercises": "עדיין אין תרגילים.",
+      "addExercise": "הוספת תרגיל",
+      "addWorkout": "הוספת אימון",
+      "pickExercise": "בחירת תרגיל",
+      "moveUp": "הזזת {{name}} למעלה",
+      "moveDown": "הזזת {{name}} למטה",
+      "removeExercise": "הסרת {{name}}",
+      "removeWorkout": "הסרת {{name}}",
+      "confirmRemoveWorkout": "להסיר את \"{{name}}\" ואת התרגילים שלו?",
+      "fields": {
+        "sets": "סטים",
+        "repsMin": "חזרות",
+        "repsMax": "עד חזרות",
+        "weightKg": "משקל",
+        "restSeconds": "מנוחה",
+        "durationSeconds": "זמן",
+        "durationMinutes": "משך",
+        "distanceKm": "מרחק",
+        "notes": "הערות"
+      },
+      "entryNotesPlaceholder": "למשל ירידה איטית",
+      "archived": "נמחק מהספרייה",
+      "required": "שדה חובה",
+      "repsMaxError": "צריך להיות לפחות כמו מספר החזרות המינימלי",
+      "weekPreview": "לוח זמנים שבועי",
+      "scheduledCount_one": "{{scheduled}} מתוך אימון שבועי אחד משובצים",
+      "scheduledCount_two": "{{scheduled}} מתוך {{count}} אימונים שבועיים משובצים",
+      "scheduledCount_other": "{{scheduled}} מתוך {{count}} אימונים שבועיים משובצים",
+      "save": "שמירת התוכנית",
+      "unsavedConfirm": "יש שינויים שלא נשמרו. לצאת בלי לשמור?",
+      "workoutLetters": "אבגדהוזחטיכלמנ"
     }
   }
 }

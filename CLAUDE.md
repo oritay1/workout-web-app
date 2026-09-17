@@ -17,9 +17,10 @@
 - Exercise types need different fields: strength (sets × reps × weight), cardio (distance, duration, pace), time-based (duration), bodyweight (sets × reps). Each exercise has muscle groups / category and optional notes.
 - A plan defines how many workouts per week and the workouts themselves (e.g. "Push", "Pull", "Legs"), each with ordered exercises and planned sets/reps/weight/rest.
 - Optional schedule: which days of the week each workout happens, and optionally at what time.
+- Implementation: `WorkoutPlan` document per plan with embedded `workouts[]` → `exercises[]` (targets stored only for the fields relevant to the exercise type) and `schedule[]` (`day` 0 = Sunday, optional `time` "HH:MM"). The editor sends the whole plan (`PUT /api/plans/:id`) and passes back workout/entry ids so they stay stable — live sessions (stage 6) should reference `planId` + `workoutId`. At most one active plan per user (the first plan is activated automatically). Deleting a plan is a hard delete — sessions must keep their own copy of what was planned.
 - Built-in exercise names must be translatable (store translation keys or per-language names, not a single English string).
 - Implementation: one `Exercise` collection. Built-in entries have `owner: null`, a stable `key` and `names: { en, he }`; they live in `server/src/data/builtInExercises.js` and are upserted on every server start (edit that file to add/fix exercises). Custom entries have `owner` and a single `name` (unique per user, case-insensitive). Built-in exercises are read-only. The client loads the whole library once and searches/filters locally (search matches names in every language).
-- Custom exercises are currently hard-deleted. Once workout plans/sessions reference exercises (stages 5-6), deleting must not break history — switch to archiving or block deletion of exercises in use.
+- Deleting a custom exercise archives it (`isArchived: true`): it disappears from the library and can't be added to new plans, but plans (and later workout history) that already use it keep showing it. Its name becomes free to reuse.
 
 **B. Planned vs. actual tracking**
 - A workout session can be started from a planned workout (or as a free session) and tracked in real time: add/remove exercises during the session, log each set (reps, weight / distance, time), mark sets done, rest timer.
@@ -117,6 +118,7 @@ client/               React + Vite
   src/context/        React context providers (AuthProvider)
   src/hooks/          shared hooks (useAuth, useErrorMessage)
   src/i18n/, src/locales/   i18next setup, language registry, one JSON per language
+  src/router.jsx      all routes (data router, so pages can use useBlocker for unsaved changes)
 ```
 
 Conventions:

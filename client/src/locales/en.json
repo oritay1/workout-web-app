@@ -10,7 +10,8 @@
     "saved": "Saved",
     "edit": "Edit",
     "delete": "Delete",
-    "cancel": "Cancel"
+    "cancel": "Cancel",
+    "close": "Close"
   },
   "header": {
     "language": "Language",
@@ -76,7 +77,9 @@
     "INVALID_FIELD": "Invalid value",
     "MEASUREMENT_NOT_FOUND": "This entry no longer exists.",
     "EXERCISE_NOT_FOUND": "This exercise doesn't exist or can't be edited.",
-    "EXERCISE_NAME_TAKEN": "You already have an exercise with this name."
+    "EXERCISE_NAME_TAKEN": "You already have an exercise with this name.",
+    "PLAN_NOT_FOUND": "This plan doesn't exist.",
+    "PLAN_HAS_ERRORS": "Some fields need fixing before saving."
   },
   "tagInput": {
     "add": "Add",
@@ -218,12 +221,16 @@
     "percent": "%",
     "bpm": "bpm",
     "mmHg": "mmHg",
-    "hours": "hours"
+    "hours": "hours",
+    "seconds": "sec",
+    "minutes": "min",
+    "km": "km"
   },
   "nav": {
     "label": "Main navigation",
     "home": "Home",
-    "exercises": "Exercises"
+    "exercises": "Exercises",
+    "plans": "Plans"
   },
   "exercises": {
     "title": "Exercises",
@@ -299,6 +306,75 @@
       "hamstrings": "Hamstrings",
       "calves": "Calves",
       "fullBody": "Full body"
+    }
+  },
+  "plans": {
+    "title": "Workout plans",
+    "new": "New plan",
+    "empty": "You don't have any workout plans yet.",
+    "createFirst": "Create your first plan",
+    "thisWeek": "This week",
+    "noActive": "No active plan. Pick one below with \"Set as active\".",
+    "activeBadge": "Active",
+    "setActive": "Set as active",
+    "perWeek_one": "{{count}} workout per week",
+    "perWeek_other": "{{count}} workouts per week",
+    "workoutCount_one": "{{count}} workout",
+    "workoutCount_other": "{{count}} workouts",
+    "editNamed": "Edit {{name}}",
+    "deleteNamed": "Delete {{name}}",
+    "confirmDelete": "Delete the plan \"{{name}}\"? This can't be undone.",
+    "backToPlans": "← Workout plans",
+    "restDay": "Rest",
+    "today": "today",
+    "untitledWorkout": "Untitled workout",
+    "editor": {
+      "newTitle": "New workout plan",
+      "editTitle": "Edit workout plan",
+      "details": "Plan details",
+      "name": "Plan name",
+      "namePlaceholder": "e.g. Push / Pull / Legs",
+      "workoutsPerWeek": "Workouts per week",
+      "notes": "Notes",
+      "notesPlaceholder": "Goal of this plan, how long to run it…",
+      "workouts": "Workouts",
+      "defaultWorkoutName": "Workout {{letter}}",
+      "workoutNumber": "Workout {{number}}",
+      "workoutName": "Workout name",
+      "workoutNamePlaceholder": "e.g. Push day",
+      "days": "Days",
+      "timeFor": "{{day}} time (optional)",
+      "exercises": "Exercises",
+      "noExercises": "No exercises yet.",
+      "addExercise": "Add exercise",
+      "addWorkout": "Add workout",
+      "pickExercise": "Choose an exercise",
+      "moveUp": "Move {{name}} up",
+      "moveDown": "Move {{name}} down",
+      "removeExercise": "Remove {{name}}",
+      "removeWorkout": "Remove {{name}}",
+      "confirmRemoveWorkout": "Remove \"{{name}}\" and its exercises?",
+      "fields": {
+        "sets": "Sets",
+        "repsMin": "Reps",
+        "repsMax": "Up to reps",
+        "weightKg": "Weight",
+        "restSeconds": "Rest",
+        "durationSeconds": "Time",
+        "durationMinutes": "Duration",
+        "distanceKm": "Distance",
+        "notes": "Notes"
+      },
+      "entryNotesPlaceholder": "e.g. slow negatives",
+      "archived": "Deleted from library",
+      "required": "Required",
+      "repsMaxError": "Must be at least the minimum reps",
+      "weekPreview": "Weekly schedule",
+      "scheduledCount_one": "{{scheduled}} of {{count}} weekly workout scheduled",
+      "scheduledCount_other": "{{scheduled}} of {{count}} weekly workouts scheduled",
+      "save": "Save plan",
+      "unsavedConfirm": "You have unsaved changes. Leave without saving?",
+      "workoutLetters": "ABCDEFGHIJKLMN"
     }
   }
 }

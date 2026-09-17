@@ -2,6 +2,9 @@ import { Navigate, createBrowserRouter } from 'react-router'
 import App from './App.jsx'
 import ExerciseFormPage from './components/ExerciseFormPage/ExerciseFormPage.jsx'
 import ExercisesPage from './components/ExercisesPage/ExercisesPage.jsx'
+import FoodDetailPage from './components/FoodDetailPage/FoodDetailPage.jsx'
+import FoodFormPage from './components/FoodFormPage/FoodFormPage.jsx'
+import FoodsPage from './components/FoodsPage/FoodsPage.jsx'
 import HistoryPage from './components/HistoryPage/HistoryPage.jsx'
 import HomePage from './components/HomePage/HomePage.jsx'
 import LiveWorkoutPage from './components/LiveWorkoutPage/LiveWorkoutPage.jsx'
@@ -43,6 +46,10 @@ export const router = createBrowserRouter([
           { path: ROUTES.workout, element: <LiveWorkoutPage /> },
           { path: ROUTES.history, element: <HistoryPage /> },
           { path: ROUTES.sessionDetail, element: <SessionDetailPage /> },
+          { path: ROUTES.foods, element: <FoodsPage /> },
+          { path: ROUTES.newFood, element: <FoodFormPage /> },
+          { path: ROUTES.foodDetail, element: <FoodDetailPage /> },
+          { path: ROUTES.editFood, element: <FoodFormPage /> },
         ],
       },
       { path: '*', element: <Navigate to={ROUTES.home} replace /> },

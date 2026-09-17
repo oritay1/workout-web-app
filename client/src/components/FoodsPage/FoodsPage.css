@@ -1,0 +1,58 @@
+.foods-page {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 720px;
+  margin-inline: auto;
+  padding: 24px 16px 32px;
+}
+
+.foods-page__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.foods-page__title {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.foods-page__filters {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.foods-page__selects {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 12px;
+}
+
+.foods-page__hint,
+.foods-page__empty,
+.foods-page__credit {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.foods-page__empty {
+  padding: 24px 0;
+  text-align: center;
+}
+
+.foods-page__credit {
+  font-size: 0.8rem;
+}
+
+.foods-page__list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

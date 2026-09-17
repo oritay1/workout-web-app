@@ -1,0 +1,31 @@
+.food-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 12px 14px;
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+  color: inherit;
+  text-decoration: none;
+}
+
+.food-item__name {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
+.food-item__meta,
+.food-item__macros {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.food-item__macros strong {
+  color: var(--color-text);
+  font-weight: 500;
+}

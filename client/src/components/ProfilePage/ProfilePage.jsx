@@ -4,6 +4,7 @@ import { getHealth } from '../../api/meApi.js'
 import { HEALTH_SECTIONS } from '../../constants/health.js'
 import { useErrorMessage } from '../../hooks/useErrorMessage.js'
 import AccountSection from '../AccountSection/AccountSection.jsx'
+import DataExportSection from '../DataExportSection/DataExportSection.jsx'
 import HealthSection from '../HealthSection/HealthSection.jsx'
 import Loader from '../Loader/Loader.jsx'
 import MeasurementsSection from '../MeasurementsSection/MeasurementsSection.jsx'
@@ -44,6 +45,7 @@ function ProfilePage() {
           />
         ))
       )}
+      <DataExportSection />
     </section>
   )
 }

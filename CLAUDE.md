@@ -94,6 +94,7 @@
 - Prepare for it now: a server service (e.g. `services/userContext.service.js`) that builds one **Markdown** document of everything relevant about a user — profile and health details, measurement history, active and past workout plans, recent sessions with plan-vs-actual, active diet plan, recent daily nutrition logs with totals vs. goals, blood test results. Clear headings, dates on everything, units on every number, tables for series.
 - Expose it to the user (`GET /api/me/export.md`) so they can download it and use their own models/tools. Only the owner can export their data.
 - Future AI features must use this same builder, not a separate one.
+- Implementation: `buildUserContext(userId, { period, timeZone })` in `server/src/services/userContext.service.js` (Markdown helpers in `markdown.js` escape user text so names/notes can't break tables or headings). `GET /api/me/export.md?days=30|90|365|all&tz=<IANA zone>` returns it as a download; the profile page has download / copy / preview. The document is always in English (stable for LLMs) with explicit units and local dates, and contains: profile & health, measurements (latest + history with change), active/other workout plans, sessions with planned-vs-actual per exercise, weekly adherence, exercise progress (best set, Epley 1RM), custom exercises, active/other diet plans with planned meals, daily nutrition totals vs goals, detailed food for the last 7 logged days, custom foods. When adding a new kind of user data, add it here too.
 
 ## Working with me (the user)
 

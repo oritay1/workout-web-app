@@ -34,3 +34,9 @@ export function addMeasurement(measurement) {
 export function deleteMeasurement(id) {
   return request(`/me/measurements/${encodeURIComponent(id)}`, { method: 'DELETE' })
 }
+
+// All of the user's data as one Markdown document. days: 30 | 90 | 365 | 'all'
+export function exportMarkdown(days, timeZone) {
+  const query = new URLSearchParams({ days: String(days), tz: timeZone }).toString()
+  return request(`/me/export.md?${query}`, { responseType: 'text' })
+}

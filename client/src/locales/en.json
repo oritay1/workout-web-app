@@ -109,7 +109,8 @@
     "DIET_PLAN_NOT_FOUND": "This diet plan doesn't exist.",
     "ENTRY_NOT_FOUND": "This entry no longer exists.",
     "MEAL_NOT_FOUND": "This meal is no longer in your active plan.",
-    "DAY_FULL": "Too many entries for one day."
+    "DAY_FULL": "Too many entries for one day.",
+    "CLIPBOARD_UNAVAILABLE": "Copying isn't available in this browser. Use Download instead."
   },
   "tagInput": {
     "add": "Add",
@@ -659,5 +660,24 @@
     "addToMeal": "Add to meal",
     "planTotals": "Planned foods vs goals",
     "planTotalsHint": "Totals of all the foods in this plan."
+  },
+  "dataExport": {
+    "title": "My data (for AI tools)",
+    "description": "Download everything the app knows about you — profile, measurements, workouts and nutrition — as one organized Markdown file you can give to ChatGPT, Claude or any other tool for analysis and advice.",
+    "period": "History to include",
+    "periods": {
+      "30": "Last 30 days",
+      "90": "Last 90 days",
+      "365": "Last year",
+      "all": "All time"
+    },
+    "download": "Download .md file",
+    "preparing": "Preparing…",
+    "copy": "Copy",
+    "preview": "Preview",
+    "hidePreview": "Hide preview",
+    "downloaded": "Downloaded.",
+    "copied": "Copied to clipboard.",
+    "privacy": "The file contains private health information. Only share it with tools and people you trust."
   }
 }

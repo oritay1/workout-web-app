@@ -1,6 +1,7 @@
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import express from 'express';
+import cookieParser from 'cookie-parser';
 import { env } from './config/env.js';
 import apiRoutes from './routes/index.js';
 import { errorHandler } from './middlewares/errorHandler.js';
@@ -15,6 +16,7 @@ if (env.isProduction) app.set('trust proxy', 1);
 
 app.disable('x-powered-by');
 app.use(express.json({ limit: '1mb' }));
+app.use(cookieParser());
 
 app.use('/api', apiRoutes);
 

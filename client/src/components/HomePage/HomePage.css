@@ -1,0 +1,16 @@
+.home-page {
+  max-width: 720px;
+  margin-inline: auto;
+  padding: 32px 16px;
+}
+
+.home-page__title {
+  margin: 0 0 8px;
+  font-size: 1.75rem;
+  overflow-wrap: anywhere;
+}
+
+.home-page__subtitle {
+  margin: 0;
+  color: var(--color-text-muted);
+}

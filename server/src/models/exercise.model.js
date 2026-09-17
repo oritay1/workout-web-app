@@ -46,15 +46,22 @@ const exerciseSchema = new mongoose.Schema(
     primaryMuscles: { type: [String], enum: MUSCLE_GROUPS, default: [] },
     secondaryMuscles: { type: [String], enum: MUSCLE_GROUPS, default: [] },
     notes: { type: String },
+    // Deleted custom exercises are archived, so plans and workout history that use them keep working
+    isArchived: { type: Boolean, default: false },
   },
   { timestamps: true },
 );
 
 exerciseSchema.index({ key: 1 }, { unique: true, partialFilterExpression: { key: { $type: 'string' } } });
-// A user can't have two custom exercises with the same name (case-insensitive)
+// A user can't have two active custom exercises with the same name (case-insensitive)
 exerciseSchema.index(
   { owner: 1, name: 1 },
-  { unique: true, collation: NAME_COLLATION, partialFilterExpression: { owner: { $type: 'objectId' } } },
+  {
+    name: 'owner_active_name_unique',
+    unique: true,
+    collation: NAME_COLLATION,
+    partialFilterExpression: { owner: { $type: 'objectId' }, isArchived: false },
+  },
 );
 
 export const Exercise = mongoose.model('Exercise', exerciseSchema);

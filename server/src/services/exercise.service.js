@@ -7,8 +7,13 @@ import { invalidField, isBlank, parseEnum, parseEnumList, parseText } from './va
 const MAX_NAME_LENGTH = 60;
 const MAX_NOTES_LENGTH = 500;
 
-// Inserts new built-in exercises and updates changed ones. Safe to run on every start
+// Inserts new built-in exercises and updates changed ones. Safe to run on every start.
+// Also brings indexes in line with the schema (drops indexes whose definition changed)
 export async function syncBuiltInExercises() {
+  // Exercises created before archiving existed have no isArchived field; the library query and the
+  // unique-name index both rely on it being false
+  await Exercise.updateMany({ isArchived: { $exists: false } }, { $set: { isArchived: false } }, { timestamps: false });
+  await Exercise.syncIndexes();
   const { upsertedCount, modifiedCount } = await Exercise.bulkWrite(
     BUILT_IN_EXERCISES.map(({ key, ...fields }) => ({
       updateOne: {
@@ -25,7 +30,7 @@ export async function syncBuiltInExercises() {
   }
 }
 
-function toPublicExercise(exercise) {
+export function toPublicExercise(exercise) {
   const isCustom = Boolean(exercise.owner);
   return {
     id: exercise._id.toString(),
@@ -37,6 +42,7 @@ function toPublicExercise(exercise) {
     primaryMuscles: exercise.primaryMuscles,
     secondaryMuscles: exercise.secondaryMuscles,
     notes: exercise.notes ?? null,
+    isArchived: Boolean(exercise.isArchived),
   };
 }
 
@@ -71,9 +77,12 @@ function parseExerciseInput(input, { partial }) {
 }
 
 async function assertNameAvailable(ownerId, name, exceptId) {
-  const taken = await Exercise.exists({ owner: ownerId, name, ...(exceptId && { _id: { $ne: exceptId } }) }).collation(
-    NAME_COLLATION,
-  );
+  const taken = await Exercise.exists({
+    owner: ownerId,
+    name,
+    isArchived: false,
+    ...(exceptId && { _id: { $ne: exceptId } }),
+  }).collation(NAME_COLLATION);
   if (taken) throw new HttpError(409, 'EXERCISE_NAME_TAKEN', { field: 'name' });
 }
 
@@ -86,15 +95,16 @@ function withoutOverlap(primaryMuscles, secondaryMuscles) {
   return secondaryMuscles.filter((muscle) => !primaryMuscles.includes(muscle));
 }
 
-// Built-in exercises plus the user's own
+// Built-in exercises plus the user's own (archived ones are hidden from the library)
 export async function listExercises(userId) {
-  const exercises = await Exercise.find({ owner: { $in: [null, userId] } }).lean();
+  const exercises = await Exercise.find({ owner: { $in: [null, userId] }, isArchived: false }).lean();
   return exercises.map(toPublicExercise);
 }
 
 export async function getExercise(userId, id) {
   const exercise =
-    mongoose.isValidObjectId(id) && (await Exercise.findOne({ _id: id, owner: { $in: [null, userId] } }).lean());
+    mongoose.isValidObjectId(id) &&
+    (await Exercise.findOne({ _id: id, owner: { $in: [null, userId] }, isArchived: false }).lean());
   if (!exercise) throw new HttpError(404, 'EXERCISE_NOT_FOUND');
   return toPublicExercise(exercise);
 }
@@ -113,7 +123,8 @@ export async function createExercise(userId, input) {
 
 // Only the owner can change a custom exercise; built-in ones are read-only
 async function findOwnExercise(userId, id) {
-  const exercise = mongoose.isValidObjectId(id) && (await Exercise.findOne({ _id: id, owner: userId }));
+  const exercise =
+    mongoose.isValidObjectId(id) && (await Exercise.findOne({ _id: id, owner: userId, isArchived: false }));
   if (!exercise) throw new HttpError(404, 'EXERCISE_NOT_FOUND');
   return exercise;
 }
@@ -136,5 +147,18 @@ export async function updateExercise(userId, id, input) {
 
 export async function deleteExercise(userId, id) {
   const exercise = await findOwnExercise(userId, id);
-  await exercise.deleteOne();
+  exercise.isArchived = true;
+  await exercise.save();
+}
+
+// Exercises a plan may use: built-in or the user's own. Archived ones are included only when
+// `allowArchivedIds` lists them (exercises that were already in the plan before being deleted)
+export async function findUsableExercises(userId, ids, allowArchivedIds = []) {
+  const exercises = await Exercise.find({ _id: { $in: ids }, owner: { $in: [null, userId] } }).lean();
+  const allowed = new Set(allowArchivedIds.map(String));
+  return new Map(
+    exercises
+      .filter((exercise) => !exercise.isArchived || allowed.has(exercise._id.toString()))
+      .map((exercise) => [exercise._id.toString(), exercise]),
+  );
 }

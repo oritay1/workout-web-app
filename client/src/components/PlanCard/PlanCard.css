@@ -1,0 +1,44 @@
+.plan-card {
+  padding: 16px;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+
+.plan-card--active {
+  border-color: var(--color-primary);
+}
+
+.plan-card__header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.plan-card__name {
+  margin: 0;
+  font-size: 1.1rem;
+  overflow-wrap: anywhere;
+}
+
+.plan-card__meta,
+.plan-card__workouts {
+  margin: 4px 0 0;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  overflow-wrap: anywhere;
+}
+
+.plan-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.plan-card__actions .button {
+  min-height: 38px;
+  padding: 0 14px;
+  font-size: 0.9rem;
+}

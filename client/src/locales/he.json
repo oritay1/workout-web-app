@@ -4,7 +4,10 @@
   },
   "common": {
     "loading": "טוען",
-    "optional": "(לא חובה)"
+    "optional": "(לא חובה)",
+    "save": "שמירה",
+    "saving": "שומר…",
+    "saved": "נשמר"
   },
   "header": {
     "language": "שפה",
@@ -13,7 +16,8 @@
   },
   "userMenu": {
     "open": "תפריט חשבון",
-    "logout": "התנתקות"
+    "logout": "התנתקות",
+    "profile": "פרופיל"
   },
   "auth": {
     "loginTitle": "ברוכים השבים",
@@ -65,6 +69,150 @@
     "EMAIL_TAKEN": "כבר קיים חשבון עם המייל הזה.",
     "INVALID_PHONE": "הזינו מספר טלפון תקין.",
     "INVALID_PASSWORD": "הסיסמה צריכה להכיל לפחות 8 תווים.",
-    "INVALID_AVATAR": "אי אפשר להשתמש בתמונה הזו. נסו תמונה אחרת."
+    "INVALID_AVATAR": "אי אפשר להשתמש בתמונה הזו. נסו תמונה אחרת.",
+    "INVALID_FIELD": "ערך לא תקין",
+    "MEASUREMENT_NOT_FOUND": "הרשומה הזו כבר לא קיימת."
+  },
+  "tagInput": {
+    "add": "הוספה",
+    "remove": "הסרת {{item}}",
+    "addTo": "הוספה ל{{label}}"
+  },
+  "onboarding": {
+    "title": "ספרו לנו קצת על עצמכם",
+    "subtitle": "הפרטים עוזרים להתאים לכם את האימונים והתזונה. הכול לא חובה.",
+    "about": "עליכם",
+    "measurements": "מדדים נוכחיים",
+    "goals": "פעילות ויעדים",
+    "moreInProfile": "פרטי אורח חיים ופרטים רפואיים (פציעות, תרופות, אלרגיות…) אפשר להוסיף אחר כך בפרופיל.",
+    "save": "שמירה והמשך",
+    "skip": "דילוג בינתיים"
+  },
+  "profile": {
+    "title": "פרופיל",
+    "sections": {
+      "account": {
+        "title": "פרטי חשבון",
+        "description": "התמונה ופרטי הקשר שלכם."
+      },
+      "measurements": {
+        "title": "מדדים",
+        "description": "מעקב אחרי ערכים שמשתנים לאורך זמן. בחרו מדד כדי לראות את ההיסטוריה שלו."
+      },
+      "body": {
+        "title": "גוף ויעדים",
+        "description": "פרטים בסיסיים לחישוב הצרכים שלכם."
+      },
+      "lifestyle": {
+        "title": "אורח חיים",
+        "description": "שינה, הרגלים והעדפות תזונה."
+      },
+      "medical": {
+        "title": "מידע רפואי",
+        "description": "רק אתם רואים את זה. זה עוזר לתת המלצות בטוחות יותר."
+      }
+    }
+  },
+  "health": {
+    "notSet": "לא הוגדר",
+    "labelWithUnit": "{{label}} ({{unit}})",
+    "rangeError": "הזינו ערך בין {{min}} ל-{{max}}",
+    "fields": {
+      "sex": "מין",
+      "dateOfBirth": "תאריך לידה",
+      "heightCm": "גובה",
+      "activityLevel": "רמת פעילות",
+      "goal": "מטרה עיקרית",
+      "targetWeightKg": "משקל יעד",
+      "sleepHours": "ממוצע שעות שינה בלילה",
+      "smoking": "עישון",
+      "alcohol": "אלכוהול",
+      "dietaryPreferences": "העדפות תזונה",
+      "conditions": "מצבים רפואיים",
+      "injuries": "פציעות ומגבלות גופניות",
+      "medications": "תרופות",
+      "supplements": "תוספי תזונה",
+      "allergies": "אלרגיות ורגישויות למזון",
+      "notes": "הערות נוספות"
+    },
+    "options": {
+      "sex": {
+        "male": "זכר",
+        "female": "נקבה"
+      },
+      "activityLevel": {
+        "sedentary": "יושבני (מעט או ללא פעילות)",
+        "light": "קלה (1-3 ימים בשבוע)",
+        "moderate": "בינונית (3-5 ימים בשבוע)",
+        "active": "פעיל (6-7 ימים בשבוע)",
+        "veryActive": "פעיל מאוד (אימונים קשים או עבודה פיזית)"
+      },
+      "goal": {
+        "loseFat": "ירידה בשומן",
+        "buildMuscle": "בניית שריר",
+        "maintain": "שמירה על המצב",
+        "performance": "שיפור ביצועים",
+        "generalHealth": "בריאות כללית"
+      },
+      "smoking": {
+        "never": "אף פעם",
+        "former": "עישנתי בעבר",
+        "current": "מעשן/ת"
+      },
+      "alcohol": {
+        "none": "בכלל לא",
+        "occasional": "לעיתים רחוקות",
+        "weekly": "כל שבוע",
+        "daily": "כל יום"
+      },
+      "dietaryPreferences": {
+        "vegetarian": "צמחוני",
+        "vegan": "טבעוני",
+        "pescatarian": "פסקטריאני",
+        "kosher": "כשר",
+        "halal": "חלאל",
+        "glutenFree": "ללא גלוטן",
+        "lactoseFree": "ללא לקטוז",
+        "lowCarb": "דל פחמימות",
+        "keto": "קטו"
+      }
+    },
+    "placeholders": {
+      "conditions": "למשל אסתמה",
+      "injuries": "למשל כאבי גב תחתון",
+      "medications": "למשל ונטולין",
+      "supplements": "למשל ויטמין D",
+      "allergies": "למשל בוטנים",
+      "notes": "כל דבר נוסף שכדאי לדעת"
+    }
+  },
+  "measurements": {
+    "types": {
+      "weight": "משקל",
+      "bodyFat": "אחוז שומן",
+      "waist": "היקף מותניים",
+      "restingHeartRate": "דופק במנוחה",
+      "bloodPressure": "לחץ דם"
+    },
+    "inputs": {
+      "value": "ערך",
+      "systolic": "סיסטולי",
+      "diastolic": "דיאסטולי"
+    },
+    "addTitle": "הוספת {{type}}",
+    "date": "תאריך",
+    "add": "הוספת רשומה",
+    "history": "היסטוריה",
+    "empty": "אין עדיין רשומות.",
+    "delete": "מחיקת הרשומה מ-{{date}}",
+    "diastolicError": "הדיאסטולי צריך להיות נמוך מהסיסטולי"
+  },
+  "units": {
+    "kg": "ק״ג",
+    "cm": "ס״מ",
+    "percent": "%",
+    "bpm": "פעימות לדקה",
+    "mmHg": "מ״מ כספית",
+    "hours": "שעות"
   }
 }

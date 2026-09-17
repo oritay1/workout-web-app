@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { Link } from 'react-router'
+import { ROUTES } from '../../constants/routes.js'
 import { useAuth } from '../../hooks/useAuth.js'
 import './UserMenu.css'
 
@@ -49,6 +51,9 @@ function UserMenu() {
           <p className="user-menu__username" dir="ltr">
             {user.username}
           </p>
+          <Link className="user-menu__item" role="menuitem" to={ROUTES.profile} onClick={() => setOpen(false)}>
+            {t('userMenu.profile')}
+          </Link>
           <button type="button" className="user-menu__item" role="menuitem" onClick={logout}>
             {t('userMenu.logout')}
           </button>

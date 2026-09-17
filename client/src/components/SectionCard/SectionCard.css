@@ -1,0 +1,75 @@
+.section-card {
+  padding: 20px 16px;
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+
+.section-card__title {
+  margin: 0 0 4px;
+  font-size: 1.15rem;
+}
+
+.section-card__description {
+  margin: 0 0 16px;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+/* Shared layout for forms inside a card */
+.section-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.section-form__footer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.section-form__status {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--color-success);
+}
+
+.section-form__error {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--color-danger);
+}
+
+.button {
+  min-height: 44px;
+  padding: 0 20px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+.button--primary {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.button--primary:hover:not(:disabled) {
+  background: var(--color-primary-hover);
+}
+
+.button--secondary {
+  border-color: var(--color-border);
+  background: transparent;
+}
+
+.button--secondary:hover:not(:disabled) {
+  background: var(--color-bg);
+}

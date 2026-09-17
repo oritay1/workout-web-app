@@ -26,6 +26,18 @@
   text-align: start;
 }
 
+.form-field__input--select {
+  appearance: auto;
+  cursor: pointer;
+}
+
+.form-field__input--textarea {
+  height: auto;
+  min-height: 96px;
+  padding-block: 12px;
+  resize: vertical;
+}
+
 .form-field__input:focus {
   outline: 2px solid var(--color-primary);
   outline-offset: -1px;

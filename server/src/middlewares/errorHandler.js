@@ -1,9 +1,11 @@
-// `code` is a stable identifier (e.g. 'NOT_FOUND') that the client translates
+// `code` is a stable identifier (e.g. 'NOT_FOUND') that the client translates.
+// `details` adds context to the response, e.g. { field: 'heightCm' }
 export class HttpError extends Error {
-  constructor(status, code, message = code) {
-    super(message);
+  constructor(status, code, details = {}) {
+    super(code);
     this.status = status;
     this.code = code;
+    this.details = details;
   }
 }
 
@@ -22,6 +24,9 @@ export function errorHandler(err, req, res, next) {
   }
 
   const status = err.status || 500;
-  if (status === 500) console.error(err);
-  res.status(status).json({ code: status === 500 ? 'SERVER_ERROR' : err.code });
+  if (status === 500) {
+    console.error(err);
+    return res.status(500).json({ code: 'SERVER_ERROR' });
+  }
+  res.status(status).json({ code: err.code, ...err.details });
 }

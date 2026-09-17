@@ -1,0 +1,52 @@
+.onboarding {
+  max-width: 560px;
+  margin-inline: auto;
+  padding: 24px 16px 40px;
+}
+
+.onboarding__title {
+  margin: 0 0 4px;
+  font-size: 1.5rem;
+}
+
+.onboarding__subtitle {
+  margin: 0 0 20px;
+  color: var(--color-text-muted);
+}
+
+.onboarding__form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.onboarding__group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px 16px;
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+
+.onboarding__group-title {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.onboarding__note {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.onboarding__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.onboarding__actions .button {
+  min-height: 48px;
+}

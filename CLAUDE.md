@@ -58,6 +58,7 @@
   - Lifestyle & goals: activity level, main goal (lose fat / build muscle / maintain / performance), target weight, average sleep hours, smoking, alcohol.
   - Medical: chronic conditions, injuries and physical limitations, medications, supplements, food allergies/intolerances, dietary preference (e.g. vegetarian, vegan, kosher).
   - Blood tests (future feature, model it now): upload a PDF → store the original file → extract results into structured data (test date, lab, and per marker: name, value, unit, reference range, flag) → show it in a clear readable format and keep it for later analysis.
+- Data model: `HealthProfile` (one per user) holds details that rarely change; `Measurement` holds dated entries (weight, body fat, waist, resting heart rate, blood pressure). Profile API lives under `/api/me` (`PATCH /api/me`, `/api/me/health`, `/api/me/measurements`, `/api/me/onboarding`). Field definitions are mirrored in `client/src/constants/health.js` — keep both sides in sync.
 - Units: metric (kg, cm, ml, km) stored in the DB; unit display preference can be added later.
 
 ### Display settings

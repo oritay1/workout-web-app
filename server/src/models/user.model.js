@@ -8,14 +8,18 @@ const userSchema = new mongoose.Schema(
     passwordHash: { type: String, required: true, select: false },
     // Small square JPEG as a data URL, resized in the browser
     avatar: { type: String },
+    // Set once the user saved or skipped the health screen shown after registration
+    onboardingCompleted: { type: Boolean, default: false },
     // Incrementing it invalidates every session token issued before
     tokenVersion: { type: Number, default: 0 },
   },
   { timestamps: true },
 );
 
+export const USERNAME_COLLATION = { locale: 'en', strength: 2 };
+
 // Case-insensitive uniqueness: "Dana" and "dana" are the same username
-userSchema.index({ username: 1 }, { unique: true, collation: { locale: 'en', strength: 2 } });
+userSchema.index({ username: 1 }, { unique: true, collation: USERNAME_COLLATION });
 userSchema.index({ email: 1 }, { unique: true });
 
 export const User = mongoose.model('User', userSchema);
